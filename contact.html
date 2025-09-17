@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TechNova – Contact</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <img src="2.PNG" alt="Smart Watch X1" class="logo">
+    <nav>
+      <b><button><a href="home.html">Home</a></button>
+      <button><a href="products.html">Products</a></button>
+      <button><a href="cart.html">Cart</a></button>
+      <button><a href="contact.html">Contact</a></button></b>
+    </nav>
+    <input type="text" id="searchInput" placeholder="Search products..." oninput="filterProducts()" />
+  </header>
+
+  <main>
+    <h2>Contact Us</h2>
+    <p>Need help or want to share feedback? Reach out below.</p>
+    <form onsubmit="submitContact(event)">
+      <input type="text" placeholder="Your Name" required /><br>
+      <input type="email" placeholder="Your Email" required /><br>
+      <textarea placeholder="Your Message" rows="5" required></textarea><br>
+      <button type="submit">Send Message</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>© 2025 TechNova. Smart Gadgets Redefined.</p>
+  </footer>
+</body>
+</html>

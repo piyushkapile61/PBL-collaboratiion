@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TechNova – Cart</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <img src="2.PNG" alt="Smart Watch X1" class="logo">
+    <nav>
+      <b><button><a href="home.html">Home</a></button>
+      <button><a href="products.html">Products</a></button>
+      <button><a href="cart.html">Cart</a></button>
+      <button><a href="contact.html">Contact</a></button></b>
+    </nav>
+    <input type="text" id="searchInput" placeholder="Search products..." oninput="filterProducts()" />
+  </header>
+
+  <main>
+    <h2>Your Cart</h2>
+<form id="cartForm">
+  <div id="cartItems" class="cart-grid"></div>
+  <h3 id="totalPrice"></h3>
+  <button type="submit">Confirm Purchase</button>
+</form>
+  </main>
+
+  <footer>
+    <p>© 2025 TechNova. Smart Gadgets Redefined.</p>
+  </footer>
+
+ <script>
+  function getCartItems() {
+    return JSON.parse(localStorage.getItem("cart")) || [];
+  }
+
+  let cartItems = getCartItems();
+  const container = document.getElementById("cartItems");
+  let total = 0;
+
+  function renderCart() {
+    container.innerHTML = "";
+    total = 0;
+
+    if (cartItems.length === 0) {
+      container.innerHTML = "<p>Your cart is empty.</p>";
+      document.getElementById("totalPrice").textContent = "";
+      return;
+    }
+
+    cartItems.forEach((item, index) => {
+      const div = document.createElement("div");
+      div.className = "cart-card";
+      div.innerHTML = `
+        <input type="checkbox" name="selected" value="${index}" checked />
+        <img src="${item.image}" alt="${item.name}" style="width:100px; border-radius:8px;" />
+        <div>
+          <h4>${item.name}</h4>
+          <p>₹${item.price}</p>
+          <button onclick="removeItem(${index})">Remove</button>
+        </div>
+      `;
+      container.appendChild(div);
+      total += item.price;
+    });
+
+    document.getElementById("totalPrice").textContent = `Total: ₹${total}`;
+  }
+
+  function removeItem(index) {
+    cartItems.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+    renderCart();
+  }
+
+  document.getElementById("cartForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const selectedIndexes = Array.from(document.querySelectorAll('input[name="selected"]:checked'))
+      .map(input => parseInt(input.value));
+
+    const selectedItems = selectedIndexes.map(i => cartItems[i]);
+    localStorage.setItem("checkoutItems", JSON.stringify(selectedItems));
+    window.location.href = "checkout.html";
+  });
+
+renderCart();
+  
+</script>
+</body>
+</html>

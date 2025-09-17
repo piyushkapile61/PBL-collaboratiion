@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TechNova – Checkout</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body style="text-align: center;">
+  <header>
+    <h1>🧾 Checkout</h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Confirm Your Order</h2>
+    <div id="orderSummary"></div>
+
+    <h3>Shipping Address</h3>
+    <form id="checkoutForm">
+      <input type="text" placeholder="Full Name" required /><br />
+      <input type="text" placeholder="Address Line 1" required /><br />
+      <input type="text" placeholder="City" required /><br />
+      <input type="text" placeholder="Postal Code" required /><br />
+      <input type="text" placeholder="Phone Number" required /><br />
+
+      <h3>Payment Method</h3>
+      <select required>
+        <option value="">Select</option>
+        <option>UPI</option>
+        <option>Credit/Debit Card</option>
+        <option>Net Banking</option>
+        <option>Cash on Delivery</option>
+      </select><br /><br />
+
+      <button type="submit">Place Order</button>
+    </form>
+    <div id="successAnimation" class="success-box">
+  <div class="tick-mark">&#10004;</div>
+  <h3>Order Placed Successfully!</h3>
+</div>
+  </main>
+  <div id="orderSummary"></div>
+
+  <footer>
+    <p>© 2025 TechNova. Smart Gadgets Redefined.</p>
+  </footer>
+
+  <script>
+  const items = JSON.parse(localStorage.getItem("checkoutItems")) || [];
+  const summary = document.getElementById("orderSummary");
+
+  if (items.length === 0) {
+    summary.innerHTML = "<p>No items selected.</p>";
+  } else {
+    let total = 0;
+    items.forEach(item => {
+      const div = document.createElement("div");
+      div.className = "checkout-item";
+      div.innerHTML = `
+        <img src="${item.image}" alt="${item.name}" style="width:100px; border-radius:8px;" />
+        <p><strong>${item.name}</strong><br>₹${item.price}</p>
+      `;
+      summary.appendChild(div);
+      total += item.price;
+    });
+    const totalDiv = document.createElement("h3");
+    totalDiv.textContent = `Total: ₹${total}`;
+    summary.appendChild(totalDiv);
+  }
+
+  document.getElementById("checkoutForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    localStorage.removeItem("checkoutItems");
+    window.location.href = "order-success.html";
+  });
+</script>
+</body>
+</html>
