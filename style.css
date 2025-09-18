@@ -10,11 +10,12 @@ body {
 }
 header {
   background: #a40d0d;
-  color: #00c8ff;
+  color: #FFF8DC;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: 'Times New Roman', Times, serif;
 }
 nav a {
   color: #000000;
