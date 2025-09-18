@@ -1,7 +1,8 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-image: url('https://img.freepik.com/free-photo/flat-lay-blue-desk-with-laptop-headphones_23-2148291112.jpg');
+  /* background-image: url('https://img.freepik.com/free-photo/flat-lay-blue-desk-with-laptop-headphones_23-2148291112.jpg'); */
+  background: linear-gradient(rgb(252, 227, 138) 0%, rgb(57, 225, 6) 100%);;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -29,7 +30,7 @@ input[type="text"], input[type="email"], textarea, select {
   border: none;
 }
 button {
-  background: #00c6ff;
+  background: #1cd780;
   color: #000;
   padding: 0.6rem 1.2rem;
   border: none;
@@ -201,4 +202,46 @@ body::before {
 }
 .ad-card {
 
+}
+
+.smart-banner-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.smart-banner {
+  position: relative;
+  width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.smart-banner:hover {
+  transform: scale(1.03);
+}
+
+.smart-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.banner-caption {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.banner-caption h3 {
+  margin: 0;
+  font-size: 1.2rem;
 }
