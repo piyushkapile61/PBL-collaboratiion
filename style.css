@@ -9,7 +9,7 @@ body {
   color: #fff;
 }
 header {
-  background: #111;
+  background: #a40d0d;
   color: #00c8ff;
   padding: 1rem 2rem;
   display: flex;
@@ -252,3 +252,21 @@ body::before {
     height: 233px;
     border-radius: 12px;
 }
+.nav-bar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-family: sans-serif;
+  }
+
+  .nav-bar a {
+    text-decoration: none;
+    color: black;
+    padding: 0 10px;
+  }
+
+  .separator {
+    width: 1px;
+    height: 20px;
+    background-color: black;
+  }
