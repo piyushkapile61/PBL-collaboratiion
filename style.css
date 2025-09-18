@@ -245,3 +245,13 @@ body::before {
   margin: 0;
   font-size: 1.2rem;
 }
+.ad-container {
+    display: flex;
+    gap: 20px;
+}
+
+.ad1 img {
+    width: 300px;
+    height: 200px;
+    border-radius: 12px;
+}
