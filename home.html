@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TechNova – Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .slideshow-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 40px auto;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    .slide {
+      display: none;
+    }
+
+    .slide img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+      background-color: rgba(0,0,0,0.5);
+      border-radius: 50%;
+      user-select: none;
+      transform: translateY(-50%);
+    }
+
+    .prev { left: 20px; }
+    .next { right: 20px; }
+
+    .fade {
+      animation: fadeEffect 1s;
+    }
+
+    @keyframes fadeEffect {
+      from { opacity: 0.4; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="2.PNG" alt="Smart Watch X1" class="logo">
+    <nav>
+      <b><button><a href="home.html">Home</a></button>
+      <button><a href="products.html">Products</a></button>
+      <button><a href="cart.html">Cart</a></button>
+      <button><a href="contact.html">Contact</a></button></b>
+    </nav>
+    <input type="text" id="searchInput" placeholder="Search products..." oninput="filterProducts()" />
+  </header>
+
+  <main class="content-overlay">
+
+    <section class="hero">
+      <h2>Welcome to TechNova</h2>
+      <p>Discover futuristic gadgets at unbeatable prices.</p>
+    </section>
+    <section class="slideshow-container">
+      <div class="slide fade">
+        <img src="11.png" alt="Mega Sale Banner" width="400px" />
+      </div>
+      <div class="slide fade">
+        <img src="" alt="Summer Super Sale Banner" />
+      </div>
+      <div class="slide fade">
+        <img src="" alt="Festive Deals Banner" />
+      </div>
+      <div class="slide fade">
+        <img src="banner4.jpg" alt="Back to School Tech Banner" />
+      </div>
+      <div class="slide fade">
+        <img src="banner5.jpg" alt="Flash Sale Friday Banner" />
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+    </section>
+
+    <section class="offers">
+      <h3>🔥 Flash Deals</h3>
+      <ul>
+        <li>50% off on Smart Watches – Today Only!</li>
+        <li>Buy 1 Get 1 Free: Wireless Earbuds</li>
+        <li>Free shipping on orders above ₹999</li>
+        <li>🎁 Bundle Offer: Smart Speaker + LED Bulb @ ₹2,999</li>
+      </ul>
+      <a href="products.html" class="button">Shop Now</a>
+    </section>
+    <section class="smart-banner-grid">
+      <div class="smart-banner">
+        <img src="https://m.media-amazon.com/images/I/61sRKTAfrhL._UF1000,1000_QL80_.jpg" alt="Wireless Earbuds Pro" />
+        <div class="banner-caption">
+          <h3>🎧 Wireless Earbuds Pro</h3>
+          <p>Buy 1 Get 1 Free – Crystal Clear Sound</p>
+          <a href="products.html" class="button">Shop Now</a>
+        </div>
+      </div>
+
+      <div class="smart-banner">
+        <img src="https://rukminim2.flixcart.com/image/292/360/xif0q/smartwatch/c/t/m/44-gen-ex-android-ios-time-up-yes-original-imahbqwn63jmqtgb.jpeg?q=90&crop=false" alt="Smart Watch X1" />
+        <div class="banner-caption">
+          <h3>⌚ Smart Watch X1</h3>
+          <p>Now ₹4,999 – Save ₹2,000</p>
+          <a href="products.html" class="button">View Offer</a>
+        </div>
+      </div>
+
+      <div class="smart-banner">
+        <img src="https://m.media-amazon.com/images/I/71NL9XcuepL._UY1100_.jpg" alt="Smart Glasses AR" />
+        <div class="banner-caption">
+          <h3>🕶️ Smart Glasses AR</h3>
+          <p>20% OFF + Free Case – AR Ready</p>
+          <a href="products.html" class="button">Explore</a>
+        </div>
+        
+        
+      </div>
+    </section>
+    <section class="info">
+      <h3>Why Shop with TechNova?</h3>
+      <ul>
+        <li>✅ 100% Genuine Products</li>
+        <li>🚚 Fast & Free Delivery</li>
+        <li>🔐 Secure Payments</li>
+        <li>💬 24/7 Customer Support</li>
+        <li>🛡️ 1-Year Warranty on All Devices</li>
+      </ul>
+    </section>
+
+    <section class="testimonials">
+      <h3>💬 What Our Customers Say</h3>
+      <div class="testimonial-grid">
+        <div class="testimonial">
+          <p>"TechNova's Smart Watch changed my life. I track everything now!"</p>
+          <span>– Riya, Pune</span>
+        </div>
+        <div class="testimonial">
+          <p>"The earbuds are crystal clear. And I got two for the price of one!"</p>
+          <span>– Arjun, Delhi</span>
+        </div>
+        <div class="testimonial">
+          <p>"Fast delivery, great packaging, and the gadgets are top-notch."</p>
+          <span>– Meera, Bangalore</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="services">
+      <h3>🛠️ Our Services</h3>
+      <ul>
+        <li>📦 Free 2-Day Delivery</li>
+        <li>🔄 Easy 7-Day Returns</li>
+        <li>📞 Tech Support via WhatsApp</li>
+        <li>📱 Mobile App for Order Tracking</li>
+      </ul>
+    </section>
+
+    <section class="app-promo">
+      <h3>📱 Get the TechNova App</h3>
+      <p>Shop faster, track orders, and get exclusive app-only deals.</p>
+      <a href="#" class="button">Download Now</a>
+    </section>
+
+    <section class="newsletter">
+      <h3>📬 Stay Updated</h3>
+      <p>Subscribe to our newsletter for weekly deals and tech tips.</p>
+      <form onsubmit="event.preventDefault(); alert('✅ Subscribed!');">
+        <input type="email" placeholder="Enter your email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+  </main>
+</main>
+
+  <footer>
+    <p>© 2025 TechNova. Smart Gadgets Redefined.</p>
+  </footer>
+
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+      let slides = document.getElementsByClassName("slide");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex - 1].style.display = "block";
+    }
+  </script>
+</body>
+</html>
