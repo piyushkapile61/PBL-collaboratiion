@@ -50,7 +50,76 @@
       from { opacity: 0.4; }
       to { opacity: 1; }
     }
+  .spinwheel-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 12px;
+  padding: 1rem;
+  width: 220px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.spinwheel-widget img {
+  height: 300px;
+  width: 220px;
+  transition: transform 13s ease;
+  margin-top: -45px;
+  margin-bottom: -45px;
+  object-fit: contain;
+}
+
+.spinwheel-widget button {
+  background: #e63946;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+.ad {
+  height: 405px;
+  width: 660px;
+  border-radius: 3%;
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
   </style>
+  <script>
+    function spinWheel() {
+  const wheel = document.getElementById("spinWheelImage");
+  const result = document.getElementById("spinResult");
+  const spinSound = document.getElementById("spinSound");
+  const rewards = ["₹100 Off", "Free Accessory", "Mystery Box", "Extra Spin", "50% Off", "Free Delivery"];
+  const angle = Math.floor(Math.random() * 360 + 720); // 2+ full rotations
+
+  // Play sound
+  spinSound.play();
+
+  // Spin animation
+  wheel.style.transform = `rotate(${angle}deg)`;
+
+  // Delay reward reveal
+  setTimeout(() => {
+    const index = Math.floor(((angle % 360) / (360 / rewards.length))) % rewards.length;
+    result.textContent = `🎉 You won: ${rewards[index]}!`;
+
+    // Trigger confetti
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
+  }, 12000);
+}
+    </script>
 </head>
 <body>
   <header>
@@ -95,17 +164,12 @@
       <a class="prev" onclick="plusSlides(-1)">❮</a>
       <a class="next" onclick="plusSlides(1)">❯</a>
     </section>
-
-    <section class="offers">
-      <h3>🔥 Flash Deals</h3>
-      <ul>
-        <li>50% off on Smart Watches – Today Only!</li>
-        <li>Buy 1 Get 1 Free: Wireless Earbuds</li>
-        <li>Free shipping on orders above ₹999</li>
-        <li>🎁 Bundle Offer: Smart Speaker + LED Bulb @ ₹2,999</li>
-      </ul>
-      <a href="products.html" class="button">Shop Now</a>
-    </section>
+<section class="ad-banner">
+<div class="image-container">
+  <img class="ad" src="ad6.png" alt="Gaming Beast Combo – Work From Home Kit"  height: 445px; width: 700px; border-radius: 3%;/>
+  <img class="ad" src="ad7.png" alt="Gaming Beast Combo – Work From Home Kit"  height: 445px; width: 700px; border-radius: 3%;/>
+</div>
+</section>
     <section class="smart-banner-grid">
       <div class="smart-banner">
         <img src="https://m.media-amazon.com/images/I/61sRKTAfrhL._UF1000,1000_QL80_.jpg" alt="Wireless Earbuds Pro" />
@@ -230,5 +294,16 @@
       slides[slideIndex - 1].style.display = "block";
     }
   </script>
+<div class="spinwheel-widget">
+  <img src="spinwheel.png" alt="Spin & Win Wheel" id="spinWheelImage"/>
+  <button onclick="spinWheel()" style="width: 174px;">🎁 Spin for Surprises!</button>
+  <p id="spinResult"></p>
+</div>
+
+<!-- 🔊 Spin Sound -->
+<audio id="spinSound" src="SPM.mp3"></audio>
+
+<!-- 🎉 Confetti Script -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </body>
 </html>
