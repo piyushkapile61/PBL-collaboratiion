@@ -33,12 +33,9 @@ function buyNow(productName, price) {
 document.getElementById("checkoutForm").addEventListener("submit", function(e) {
   e.preventDefault();
   localStorage.removeItem("checkoutItem");
-
-  // Show success animation
   document.getElementById("successAnimation").style.display = "block";
-
-  // Optionally redirect after delay
   setTimeout(() => {
     window.location.href = "home.html";
   }, 3000);
-});
+}
+);
