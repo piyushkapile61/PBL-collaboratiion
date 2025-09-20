@@ -296,8 +296,7 @@ body::before {
 }
 
 .ad-container {
-  padding-left: 6%;
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
   gap: 20px;
 }
