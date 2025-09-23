@@ -1,143 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <title>TechNova – Home</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .slideshow-container {
-      position: relative;
-      max-width: 1440px;
-      margin: 40px auto;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      margin-top: -2px;
-    }
-
-    .slide {
-      display: none;
-    }
-
-    .slide img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-
-    .prev, .next {
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      padding: 16px;
-      color: white;
-      font-weight: bold;
-      font-size: 24px;
-      background-color: rgba(0,0,0,0.5);
-      border-radius: 50%;
-      user-select: none;
-      transform: translateY(-50%);
-    }
-
-    .prev { left: 20px; }
-    .next { right: 20px; }
-
-    .fade {
-      animation: fadeEffect 1s;
-    }
-
-    @keyframes fadeEffect {
-      from { opacity: 0.4; }
-      to { opacity: 1; }
-    }
-  .spinwheel-widget {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  border-radius: 12px;
-  padding: 1rem;
-  width: 220px;
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
-}
-
-.spinwheel-widget img {
-  height: 300px;
-  width: 220px;
-  transition: transform 13s ease;
-  margin-top: -45px;
-  margin-bottom: -45px;
-  object-fit: contain;
-}
-
-.spinwheel-widget button {
-  background: #e63946;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  width: 100%;
-  margin-bottom: 0.5rem;
-}
-.ad {
-  height: 405px;
-  width: 660px;
-  border-radius: 3%;
-}
-.image-container {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-}
-
-  </style>
-  <script>
-    function spinWheel() {
-  const wheel = document.getElementById("spinWheelImage");
-  const result = document.getElementById("spinResult");
-  const spinSound = document.getElementById("spinSound");
-  const rewards = ["₹100 Off", "Free Accessory", "Mystery Box", "Extra Spin", "50% Off", "Free Delivery"];
-  const angle = Math.floor(Math.random() * 360 + 720); // 2+ full rotations
-
-  // Play sound
-  spinSound.play();
-
-  // Spin animation
-  wheel.style.transform = `rotate(${angle}deg)`;
-
-  // Delay reward reveal
-  setTimeout(() => {
-    const index = Math.floor(((angle % 360) / (360 / rewards.length))) % rewards.length;
-    result.textContent = `🎉 You won: ${rewards[index]}!`;
-
-    // Trigger confetti
-    confetti({
-      particleCount: 100,
-      spread: 70,
-      origin: { y: 0.6 }
-    });
-  }, 12000);
-}
-    </script>
+  <title>Plactic</title>
+  <link rel="stylesheet" href="/Stylesheet/style.css" />
+  <link rel="stylesheet" href="/Stylesheet/indexstyle.css" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="javascript/script.js"></script>
+  <script src="javascript/spinwheel.js"></script>
 </head>
+
 <body>
   <header>
-    <img src="22.PNG" alt="Smart Watch X1" class="logo"/>
-    <nav>
-      <b>
-  <div class="nav-bar">
-  <a href="home.html" style="border:none;">Home</a>
-  <div class="separator"></div>
-  <a href="products.html" style="border:none;">Products</a>
-  <div class="separator"></div>
-  <a href="cart.html" style="border:none;">Cart</a>
-  <div class="separator"></div>
-  <a href="contact.html" style="border:none;">Contact</a>
-  </div>
-    </nav>
-    <input type="text" id="searchInput" placeholder="Search products..." onkeyup="filterProducts()">
+    <div class="navbar">
+      <ul>
+        <li style="box-shadow: none; border: none; background: none;">&nbsp;&nbsp;&nbsp;<img src="Images/icons/logo.png"
+            style="width: 45px;">
+          <a href="null" style="font-size: 17px;">SNAPDEAL</a>
+        </li>
+        <li>&nbsp;&nbsp;&nbsp;<img src="/images/icons/home.svg" alt="home"><a href="home.html">HOME </a></li>
+        <li>&nbsp;&nbsp;&nbsp;<img src="/images/icons/products.svg" alt="support"><a href="products.html">Products</a>
+        </li>
+        <li>&nbsp;&nbsp;&nbsp;<img src="/images/icons/cart.svg" alt="info"><a href="cart.html">Cart</a></li>
+        <li>&nbsp;&nbsp;&nbsp;<img src="/images/icons/contact.svg" alt="support"><a href="contact.html">CONTACT</a></li>
+        <input type="text" class="searchInput" style=" width: 358px;;margin-left: 10px;margin-top: 9px;
+         height: 38px;border-radius: 5px; background-color: #acb8f4;border: 1px solid #27273e2e;"
+          placeholder="Search products..." onkeyup="filterProducts()">
+      </ul>
+    </div>
   </header>
 
   <main class="content-overlay">
@@ -146,30 +37,36 @@
     </section>
     <section class="slideshow-container">
       <div class="slide fade">
-        <img src="banner2.png" alt="Mega Sale Banner" width="400px" />
+        <img src="images/banner2_imresizer.jpg" alt="Mega Sale Banner" />
       </div>
       <div class="slide fade">
-        <img src="banner1.png" alt="Summer Super Sale Banner" />
+        <img src="images/banner1.png" alt="Summer Super Sale Banner" />
       </div>
       <div class="slide fade">
-        <img src="banner3.png" alt="Festive Deals Banner" />
+        <img src="images/banner3.png" alt="Festive Deals Banner" />
       </div>
       <div class="slide fade">
-        <img src="banner4.png" alt="Back to School Tech Banner" />
+        <img src="images/banner4.png" alt="Back to School Tech Banner" />
       </div>
       <div class="slide fade">
-        <img src="banner5.png" alt="Flash Sale Friday Banner" />
+        <img src="images/banner5.png" alt="Flash Sale Friday Banner" />
       </div>
 
       <a class="prev" onclick="plusSlides(-1)">❮</a>
       <a class="next" onclick="plusSlides(1)">❯</a>
+
+
+
+
     </section>
-<section class="ad-banner">
-<div class="image-container">
-  <img class="ad" src="ad6.png" alt="Gaming Beast Combo – Work From Home Kit"  height: 445px; width: 700px; border-radius: 3%;/>
-  <img class="ad" src="ad7.png" alt="Gaming Beast Combo – Work From Home Kit"  height: 445px; width: 700px; border-radius: 3%;/>
-</div>
-</section>
+    <section class="ad-banner">
+      <div class="image-container">
+        <img class="ad" src="images/ad6.png" alt="Gaming Beast Combo – Work From Home Kit" width="49%" height="auto"
+          border-radius: 3%; />
+        <img class="ad" src="images/ad7.png" alt="Gaming Beast Combo – Work From Home Kit" width="49%" height="auto"
+          border-radius: 3%; />
+      </div>
+    </section>
     <section class="smart-banner-grid">
       <div class="smart-banner">
         <img src="https://m.media-amazon.com/images/I/61sRKTAfrhL._UF1000,1000_QL80_.jpg" alt="Wireless Earbuds Pro" />
@@ -181,7 +78,9 @@
       </div>
 
       <div class="smart-banner">
-        <img src="https://rukminim2.flixcart.com/image/292/360/xif0q/smartwatch/c/t/m/44-gen-ex-android-ios-time-up-yes-original-imahbqwn63jmqtgb.jpeg?q=90&crop=false" alt="Smart Watch X1" />
+        <img
+          src="https://rukminim2.flixcart.com/image/292/360/xif0q/smartwatch/c/t/m/44-gen-ex-android-ios-time-up-yes-original-imahbqwn63jmqtgb.jpeg?q=90&crop=false"
+          alt="Smart Watch X1" />
         <div class="banner-caption">
           <h3>⌚ Smart Watch X1</h3>
           <p>Now ₹4,999 – Save ₹2,000</p>
@@ -196,27 +95,27 @@
           <p>20% OFF + Free Case – AR Ready</p>
           <a href="products.html" class="button">Explore</a>
         </div>
-        
-        
+
+
       </div>
     </section>
-   <div class="ad-container">
-    <div class="ad1">
-        <img src="ad1.png" alt="ad1" />
+    <div class="ad-container">
+      <div class="ad1">
+        <img src="images/ad1.png" alt="ad1" />
+      </div>
+      <div class="ad1">
+        <img src="images/ad2.png" alt="ad2" />
+      </div>
+      <div class="ad1">
+        <img src="images/ad3.png" alt="ad2" />
+      </div>
+      <div class="ad1">
+        <img src="images/ad4.png" alt="ad2" />
+      </div>
+      <div class="ad1">
+        <img src="images/ad5.png" alt="ad2" />
+      </div>
     </div>
-    <div class="ad1">
-        <img src="ad2.png" alt="ad2" />
-    </div>
-     <div class="ad1">
-        <img src="ad3.png" alt="ad2" />
-    </div> 
-    <div class="ad1">
-        <img src="ad4.png" alt="ad2" />
-    </div>
-    <div class="ad1">
-        <img src="ad5.png" alt="ad2" />
-    </div>
-</div>
     <section class="testimonials">
       <h3>💬 What Our Customers Say</h3>
       <div class="testimonial-grid">
@@ -234,6 +133,27 @@
         </div>
       </div>
     </section>
+<!--ljedsnfiaerdsgbvifhcwaeshxmdwjshfjewkhfdjkfhsdahfjksfhasnduewarfey dfcsadghcljaws-->
+    <div class="feedbox">
+               <div class="row">
+                  <div class="col-md-6 offset-md-3">
+                     <div class="subscribe_form ">
+                        <div class="heading_container heading_center">
+                           <h3>Subscribe To Get Discount Offers</h3>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                        <form action="">
+                           <input type="email" placeholder="Enter your email">
+                           <button>
+                           subscribe
+                           </button>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+<!--ljedsnfiaerdsgbvifhcwaeshxmdwjshfjewkhfdjkfhsdahfjksfhasnduewarfey dfcsadghcljaws-->
+
 
     <section class="services">
       <h3>🛠️ Our Services</h3>
@@ -260,7 +180,7 @@
       </form>
     </section>
   </main>
-</main>
+  </main>
 
   <footer>
     <p>© 2025 TechNova. Smart Gadgets Redefined.</p>
@@ -284,16 +204,19 @@
       slides[slideIndex - 1].style.display = "block";
     }
   </script>
-<div class="spinwheel-widget">
-  <img src="spinwheel.png" alt="Spin & Win Wheel" id="spinWheelImage"/>
-  <button onclick="spinWheel()" style="width: 174px;">🎁 Spin for Surprises!</button>
-  <p id="spinResult"></p>
-</div>
+  <div class="spinwheel-widget">
+    <img src="/Images/icons/spinwheel.png" alt="Spin & Win Wheel" id="spinWheelImage" />
+    <div class="pointer">
+      <img src="Images/pointer.png"style="width: 25px;">
+    </div>
+    <button onclick="spinWheel()" style="width: 174px;">🎁 Spin for Surprises!</button>
+    <p id="spinResult"></p>
+  </div>
 
-<!-- 🔊 Spin Sound -->
-<audio id="spinSound" src="SPM.mp3"></audio>
+  <!-- 🔊 Spin Sound -->
+  <audio id="spinSound" src="SPM.mp3"></audio>
 
-<!-- 🎉 Confetti Script -->
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <!-- 🎉 Confetti Script -->
 </body>
+
 </html>
