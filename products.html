@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>TechNova – Products</title>
@@ -7,191 +8,255 @@
     p {
       font-size: large;
     }
+
     img {
-    width: auto;
-    height: 350px;
-    object-fit: cover; /* Optional: ensures images fill the box neatly */
-  }
-  h2 {
-    text-align: center;
-  }
-    </style>
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
+      width: auto;
+      height: 350px;
+      object-fit: cover;
+      /* Optional: ensures images fill the box neatly */
+    }
+
+    h2 {
+      text-align: center;
+    }
+  </style>
+  <link rel="stylesheet" href="/Stylesheet/style.css" />
+  <link rel="stylesheet" href="/Stylesheet/indexstyle.css" />
+  <script src="/javascript/script.js" defer></script>
 </head>
+
 <body>
   <header>
-    <img src="22.PNG" alt="logo" class="logo">
-    <nav>
-      <b>
-  <div class="nav-bar">
-  <a href="home.html" style="border:none;">Home</a>
-  <div class="separator"></div>
-  <a href="products.html" style="border:none;">Products</a>
-  <div class="separator"></div>
-  <a href="cart.html" style="border:none;">Cart</a>
-  <div class="separator"></div>
-  <a href="contact.html" style="border:none;">Contact</a>
-  </div>
-      </b>
-    </nav>
-    <input type="text" id="searchInput" placeholder="Search products..." oninput="filterProducts()" />
+    <div class="navbar">
+      <ul>
+        <li style="box-shadow: none; border: none; background: none;">&nbsp;&nbsp;&nbsp;<img src="Images/icons/logo.png"
+            style="width: 45px;">
+          <a href="null" style="font-size: 17px;">SNAPDEAL</a>
+        </li>
+        <li>&nbsp;&nbsp;&nbsp;<img src="/images/icons/home.svg" alt="home"><a href="home.html">HOME </a></li>
+        <li>&nbsp;&nbsp;&nbsp;<img src="/images/icons/products.svg" alt="support"><a href="products.html">Products</a>
+        </li>
+        <li>&nbsp;&nbsp;&nbsp;<img src="/images/icons/cart.svg" alt="info"><a href="cart.html">Cart</a></li>
+        <li>&nbsp;&nbsp;&nbsp;<img src="/images/icons/contact.svg" alt="support"><a href="contact.html">CONTACT</a></li>
+        <input type="text" class="searchInput" style=" width: 358px;;margin-left: 10px;margin-top: 9px;
+         height: 38px;border-radius: 5px; background-color: #acb8f4;border: 1px solid #27273e2e;"
+          placeholder="Search products..." onkeyup="filterProducts()">
+      </ul>
+    </div>
   </header>
 
   <main>
     <h2>Explore Our Smart Gadgets</h2>
     <div class="product-grid" id="productGrid">
       <div class="card" data-name="Smart Watch X1">
-        <img src="https://rukminim2.flixcart.com/image/292/360/xif0q/smartwatch/c/t/m/44-gen-ex-android-ios-time-up-yes-original-imahbqwn63jmqtgb.jpeg?q=90&crop=false" alt="Smart Watch X1" />
+        <img
+          src="https://rukminim2.flixcart.com/image/292/360/xif0q/smartwatch/c/t/m/44-gen-ex-android-ios-time-up-yes-original-imahbqwn63jmqtgb.jpeg?q=90&crop=false"
+          alt="Smart Watch X1" />
         <h3>Smart Watch X1</h3>
         <p>₹4,999 – Fitness, Calls, Notifications</p>
-<button onclick="buyNow('Smart Watch X1', 4999, 'https://images.unsplash.com/photo-1606813902910-3b1c1e7e6c6d?auto=format&fit=crop&w=400&q=https://rukminim2.flixcart.com/image/292/360/xif0q/smartwatch/c/t/m/44-gen-ex-android-ios-time-up-yes-original-imahbqwn63jmqtgb.jpeg?q=90&crop=false')">⚡ Buy Now</button>
-<button onclick="addToCart('Smart Watch X1', 4999, 'https://rukminim2.flixcart.com/image/292/360/xif0q/smartwatch/c/t/m/44-gen-ex-android-ios-time-up-yes-original-imahbqwn63jmqtgb.jpeg?q=90&crop=falsehttps://images.unsplash.com/photo-1606813902910-3b1c1e7e6c6d?auto=format&fit=crop&w=400&q=80')">🛒 Add to Cart</button>        
-<div class="reviews">
+        <button
+          onclick="buyNow('Smart Watch X1', 4999, 'https://images.unsplash.com/photo-1606813902910-3b1c1e7e6c6d?auto=format&fit=crop&w=400&q=https://rukminim2.flixcart.com/image/292/360/xif0q/smartwatch/c/t/m/44-gen-ex-android-ios-time-up-yes-original-imahbqwn63jmqtgb.jpeg?q=90&crop=false')">⚡
+          Buy Now</button>
+        <button
+          onclick="addToCart('Smart Watch X1', 4999, 'https://rukminim2.flixcart.com/image/292/360/xif0q/smartwatch/c/t/m/44-gen-ex-android-ios-time-up-yes-original-imahbqwn63jmqtgb.jpeg?q=90&crop=falsehttps://images.unsplash.com/photo-1606813902910-3b1c1e7e6c6d?auto=format&fit=crop&w=400&q=80')">🛒
+          Add to Cart</button>
+        <div class="reviews">
           <p><strong>Ravi:</strong> Battery lasts 5 days!</p>
           <p><strong>Priya:</strong> Sleek and responsive.</p>
         </div>
         <div class="offer">🔥 30% OFF – Today Only!</div>
       </div>
-<div class="card" data-name="Smart Watch X1">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUgcpxeOxTqdWLhuXiTSPPdFwS9cuxGB6dQQ&s" alt="Smart Watch X1" />
+      <div class="card" data-name="Smart Watch X1">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUgcpxeOxTqdWLhuXiTSPPdFwS9cuxGB6dQQ&s"
+          alt="Smart Watch X1" />
         <h3>Iphone 17 Pro Max</h3>
         <p>₹1,49,900 – Fitness, Calls, Notifications</p>
-        <button onclick="buyNow('Smart Watch X1', 4999, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUgcpxeOxTqdWLhuXiTSPPdFwS9cuxGB6dQQ&s')">⚡ Buy Now</button>
-        <button onclick="addToCart('Smart Watch X1', 4999, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUgcpxeOxTqdWLhuXiTSPPdFwS9cuxGB6dQQ&s')">🛒 Add to Cart</button>
+        <button
+          onclick="buyNow('Smart Watch X1', 4999, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUgcpxeOxTqdWLhuXiTSPPdFwS9cuxGB6dQQ&s')">⚡
+          Buy Now</button>
+        <button
+          onclick="addToCart('Smart Watch X1', 4999, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUgcpxeOxTqdWLhuXiTSPPdFwS9cuxGB6dQQ&s')">🛒
+          Add to Cart</button>
         <div class="reviews">
           <p><strong>Ravi:</strong> Battery lasts 5 days!</p>
           <p><strong>Priya:</strong> Sleek and responsive.</p>
         </div>
         <div class="offer">🔥 30% OFF – Today Only!</div>
       </div>
-<div class="card" data-name="Smart Watch X1">
-        <img src="https://www.shutterstock.com/image-vector/kyiv-ukraine-september-30-2024-600nw-2524016933.jpg" alt="Smart Watch X1" />
+      <div class="card" data-name="Smart Watch X1">
+        <img src="https://www.shutterstock.com/image-vector/kyiv-ukraine-september-30-2024-600nw-2524016933.jpg"
+          alt="Smart Watch X1" />
         <h3>Air Pods Pro 2</h3>
         <p>₹22,990 – Fitness, Calls, Notifications</p>
-        <button onclick="buyNow('Smart Watch X1', 4999, 'https://www.shutterstock.com/image-vector/kyiv-ukraine-september-30-2024-600nw-2524016933.jpg')">⚡ Buy Now</button>
-        <button onclick="addToCart('Smart Watch X1', 4999, 'https://www.shutterstock.com/image-vector/kyiv-ukraine-september-30-2024-600nw-2524016933.jpg')">🛒 Add to Cart</button>
+        <button
+          onclick="buyNow('Smart Watch X1', 4999, 'https://www.shutterstock.com/image-vector/kyiv-ukraine-september-30-2024-600nw-2524016933.jpg')">⚡
+          Buy Now</button>
+        <button
+          onclick="addToCart('Smart Watch X1', 4999, 'https://www.shutterstock.com/image-vector/kyiv-ukraine-september-30-2024-600nw-2524016933.jpg')">🛒
+          Add to Cart</button>
         <div class="reviews">
           <p><strong>Ravi:</strong> Battery lasts 5 days!</p>
           <p><strong>Priya:</strong> Sleek and responsive.</p>
         </div>
         <div class="offer">🔥 30% OFF – Today Only!</div>
       </div>
-<div class="card" data-name="Smart Watch X1">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMZZZR0iR3p_2ZQcb-8VxLIw8f0sGRoF6GLw&s" alt="Smart Watch X1" />
+      <div class="card" data-name="Smart Watch X1">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMZZZR0iR3p_2ZQcb-8VxLIw8f0sGRoF6GLw&s"
+          alt="Smart Watch X1" />
         <h3>Macbook Air M4</h3>
         <p>₹93,990 – Fitness, Calls, Notifications</p>
-        <button onclick="buyNow('Smart Watch X1', 4999, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMZZZR0iR3p_2ZQcb-8VxLIw8f0sGRoF6GLw&s')">⚡ Buy Now</button>
-        <button onclick="addToCart('Smart Watch X1', 4999, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMZZZR0iR3p_2ZQcb-8VxLIw8f0sGRoF6GLw&s')">🛒 Add to Cart</button>
+        <button
+          onclick="buyNow('Smart Watch X1', 4999, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMZZZR0iR3p_2ZQcb-8VxLIw8f0sGRoF6GLw&s')">⚡
+          Buy Now</button>
+        <button
+          onclick="addToCart('Smart Watch X1', 4999, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMZZZR0iR3p_2ZQcb-8VxLIw8f0sGRoF6GLw&s')">🛒
+          Add to Cart</button>
         <div class="reviews">
           <p><strong>Ravi:</strong> Battery lasts 5 days!</p>
           <p><strong>Priya:</strong> Sleek and responsive.</p>
         </div>
         <div class="offer">🔥 30% OFF – Today Only!</div>
       </div>
-<div class="card" data-name="Smart Watch X1">
+      <div class="card" data-name="Smart Watch X1">
         <img src="https://m.media-amazon.com/images/I/61yggJpMNTL._UF1000,1000_QL80_.jpg" alt="Smart Watch X1" />
         <h3>boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones</h3>
         <p>₹1,599 – Fitness, Calls, Notifications</p>
-        <button onclick="buyNow('Smart Watch X1', 4999, 'https://m.media-amazon.com/images/I/61yggJpMNTL._UF1000,1000_QL80_.jpg')">⚡ Buy Now</button>
-        <button onclick="addToCart('Smart Watch X1', 4999), 'https://m.media-amazon.com/images/I/61yggJpMNTL._UF1000,1000_QL80_.jpg'">🛒 Add to Cart</button>
+        <button
+          onclick="buyNow('Smart Watch X1', 4999, 'https://m.media-amazon.com/images/I/61yggJpMNTL._UF1000,1000_QL80_.jpg')">⚡
+          Buy Now</button>
+        <button
+          onclick="addToCart('Smart Watch X1', 4999), 'https://m.media-amazon.com/images/I/61yggJpMNTL._UF1000,1000_QL80_.jpg'">🛒
+          Add to Cart</button>
         <div class="reviews">
           <p><strong>Ravi:</strong> Battery lasts 5 days!</p>
           <p><strong>Priya:</strong> Sleek and responsive.</p>
         </div>
         <div class="offer">🔥 30% OFF – Today Only!</div>
       </div>
-<div class="card" data-name="Smart Watch X1">
+      <div class="card" data-name="Smart Watch X1">
         <img src="https://m.media-amazon.com/images/I/A18eQcdaQZL.jpg" alt="Smart Watch X1" />
         <h3>Marshall Woburn 4090963 200 Watt Wireless Bluetooth Satellite Speaker (Black)</h3>
         <p>₹54,999 – Fitness, Calls, Notifications</p>
-        <button onclick="buyNow('Smart Watch X1', 4999, 'https://m.media-amazon.com/images/I/61yggJpMNTL._UF1000,1000_QL80_.jpg')">⚡ Buy Now</button>
-        <button onclick="addToCart('Smart Watch X1', 4999, 'https://m.media-amazon.com/images/I/61yggJpMNTL._UF1000,1000_QL80_.jpg')">🛒 Add to Cart</button>
+        <button
+          onclick="buyNow('Smart Watch X1', 4999, 'https://m.media-amazon.com/images/I/61yggJpMNTL._UF1000,1000_QL80_.jpg')">⚡
+          Buy Now</button>
+        <button
+          onclick="addToCart('Smart Watch X1', 4999, 'https://m.media-amazon.com/images/I/61yggJpMNTL._UF1000,1000_QL80_.jpg')">🛒
+          Add to Cart</button>
         <div class="reviews">
           <p><strong>Ravi:</strong> Battery lasts 5 days!</p>
           <p><strong>Priya:</strong> Sleek and responsive.</p>
         </div>
         <div class="offer">🔥 30% OFF – Today Only!</div>
       </div>
-<div class="card" data-name="Smart Watch X1">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUz2_Z42AafXDsIsfdt79QysQoDwWgIWEGvg&s" alt="Smart Watch X1" />
+      <div class="card" data-name="Smart Watch X1">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUz2_Z42AafXDsIsfdt79QysQoDwWgIWEGvg&s"
+          alt="Smart Watch X1" />
         <h3>10.9-inch iPad 10th Gen Wi-Fi 256GB - Silver</h3>
         <p>₹49,900 – Fitness, Calls, Notifications</p>
-        <button onclick="buyNow('Smart Watch X1', 4999, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUz2_Z42AafXDsIsfdt79QysQoDwWgIWEGvg&s')">⚡ Buy Now</button>
-        <button onclick="addToCart('Smart Watch X1', 4999), 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUz2_Z42AafXDsIsfdt79QysQoDwWgIWEGvg&s'">🛒 Add to Cart</button>
+        <button
+          onclick="buyNow('Smart Watch X1', 4999, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUz2_Z42AafXDsIsfdt79QysQoDwWgIWEGvg&s')">⚡
+          Buy Now</button>
+        <button
+          onclick="addToCart('Smart Watch X1', 4999), 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUz2_Z42AafXDsIsfdt79QysQoDwWgIWEGvg&s'">🛒
+          Add to Cart</button>
         <div class="reviews">
           <p><strong>Ravi:</strong> Battery lasts 5 days!</p>
           <p><strong>Priya:</strong> Sleek and responsive.</p>
         </div>
         <div class="offer">🔥 30% OFF – Today Only!</div>
       </div>
-<div class="card" data-name="Smart Watch X1">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDPcDFbuc_tJD6K-lyHerbEM1uopd-UiARrg&s" alt="Smart Watch X1" />
+      <div class="card" data-name="Smart Watch X1">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDPcDFbuc_tJD6K-lyHerbEM1uopd-UiARrg&s"
+          alt="Smart Watch X1" />
         <h3>Canon EOS 200D DSLR Camera (18-55mm Lens)</h3>
         <p>₹55,600 – Fitness, Calls, Notifications</p>
-        <button onclick="buyNow('Smart Watch X1', 4999, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDPcDFbuc_tJD6K-lyHerbEM1uopd-UiARrg&s')">⚡ Buy Now</button>
-        <button onclick="addToCart('Smart Watch X1', 4999, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDPcDFbuc_tJD6K-lyHerbEM1uopd-UiARrg&s')">🛒 Add to Cart</button>
+        <button
+          onclick="buyNow('Smart Watch X1', 4999, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDPcDFbuc_tJD6K-lyHerbEM1uopd-UiARrg&s')">⚡
+          Buy Now</button>
+        <button
+          onclick="addToCart('Smart Watch X1', 4999, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDPcDFbuc_tJD6K-lyHerbEM1uopd-UiARrg&s')">🛒
+          Add to Cart</button>
         <div class="reviews">
           <p><strong>Ravi:</strong> Battery lasts 5 days!</p>
           <p><strong>Priya:</strong> Sleek and responsive.</p>
         </div>
         <div class="offer">🔥 30% OFF – Today Only!</div>
       </div>
-<div class="card" data-name="Smart Watch X1">
-        <img src="https://rukminim2.flixcart.com/image/704/844/xif0q/gamingconsole/d/t/z/visual-2000-gb-internal-storage-ultra-fast-ssd-sony-ps5-pro-2-tb-original-imahbfgcppjhexme.jpeg?q=90&crop=false" alt="Smart Watch X1" />
+      <div class="card" data-name="Smart Watch X1">
+        <img
+          src="https://rukminim2.flixcart.com/image/704/844/xif0q/gamingconsole/d/t/z/visual-2000-gb-internal-storage-ultra-fast-ssd-sony-ps5-pro-2-tb-original-imahbfgcppjhexme.jpeg?q=90&crop=false"
+          alt="Smart Watch X1" />
         <h3>Playstation Sony PS5 Pro 2 TB SSD Console</h3>
         <p>₹85,990 – Fitness, Calls, Notifications</p>
-        <button onclick="buyNow('Smart Watch X1', 4999, 'https://rukminim2.flixcart.com/image/704/844/xif0q/gamingconsole/d/t/z/visual-2000-gb-internal-storage-ultra-fast-ssd-sony-ps5-pro-2-tb-original-imahbfgcppjhexme.jpeg?q=90&crop=false')">⚡ Buy Now</button>
-        <button onclick="addToCart('Smart Watch X1', 4999, 'https://rukminim2.flixcart.com/image/704/844/xif0q/gamingconsole/d/t/z/visual-2000-gb-internal-storage-ultra-fast-ssd-sony-ps5-pro-2-tb-original-imahbfgcppjhexme.jpeg?q=90&crop=false')">🛒 Add to Cart</button>
+        <button
+          onclick="buyNow('Smart Watch X1', 4999, 'https://rukminim2.flixcart.com/image/704/844/xif0q/gamingconsole/d/t/z/visual-2000-gb-internal-storage-ultra-fast-ssd-sony-ps5-pro-2-tb-original-imahbfgcppjhexme.jpeg?q=90&crop=false')">⚡
+          Buy Now</button>
+        <button
+          onclick="addToCart('Smart Watch X1', 4999, 'https://rukminim2.flixcart.com/image/704/844/xif0q/gamingconsole/d/t/z/visual-2000-gb-internal-storage-ultra-fast-ssd-sony-ps5-pro-2-tb-original-imahbfgcppjhexme.jpeg?q=90&crop=false')">🛒
+          Add to Cart</button>
         <div class="reviews">
           <p><strong>Ravi:</strong> Battery lasts 5 days!</p>
           <p><strong>Priya:</strong> Sleek and responsive.</p>
         </div>
         <div class="offer">🔥 30% OFF – Today Only!</div>
       </div>
-<div class="card" data-name="Smart Watch X1">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8kepBsYQcM3r6rVg9mPE9jwDtvS5IeiXKlA&s" alt="Smart Watch X1" />
+      <div class="card" data-name="Smart Watch X1">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8kepBsYQcM3r6rVg9mPE9jwDtvS5IeiXKlA&s"
+          alt="Smart Watch X1" />
         <h3>Sceptre New Curved 30-inch Gaming Monitor 200+Hz Build-in Speakers 2560 x 1080p</h3>
         <p>₹18,600 – Fitness, Calls, Notifications</p>
-        <button onclick="buyNow('Smart Watch X1', 4999, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8kepBsYQcM3r6rVg9mPE9jwDtvS5IeiXKlA&s')">⚡ Buy Now</button>
-        <button onclick="addToCart('Smart Watch X1', 4999, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8kepBsYQcM3r6rVg9mPE9jwDtvS5IeiXKlA&s')">🛒 Add to Cart</button>
+        <button
+          onclick="buyNow('Smart Watch X1', 4999, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8kepBsYQcM3r6rVg9mPE9jwDtvS5IeiXKlA&s')">⚡
+          Buy Now</button>
+        <button
+          onclick="addToCart('Smart Watch X1', 4999, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8kepBsYQcM3r6rVg9mPE9jwDtvS5IeiXKlA&s')">🛒
+          Add to Cart</button>
         <div class="reviews">
           <p><strong>Ravi:</strong> Battery lasts 5 days!</p>
           <p><strong>Priya:</strong> Sleek and responsive.</p>
         </div>
         <div class="offer">🔥 30% OFF – Today Only!</div>
       </div>
-<div class="card" data-name="Smart Watch X1">
+      <div class="card" data-name="Smart Watch X1">
         <img src="https://m.media-amazon.com/images/I/518HH8T7bSL._UF1000,1000_QL80_.jpg" />
         <h3>RGB Gaming Combo 2 in 1 REDMO RM-200 Keyboard wired Gaming Mouse Flexible</h3>
         <p>₹1,299 – Fitness, Calls, Notifications</p>
-        <button onclick="buyNow('Smart Watch X1', 4999, 'https://m.media-amazon.com/images/I/518HH8T7bSL._UF1000,1000_QL80_.jpg')">⚡ Buy Now</button>
-        <button onclick="addToCart('Smart Watch X1', 4999, 'https://m.media-amazon.com/images/I/518HH8T7bSL._UF1000,1000_QL80_.jpg')">🛒 Add to Cart</button>
+        <button
+          onclick="buyNow('Smart Watch X1', 4999, 'https://m.media-amazon.com/images/I/518HH8T7bSL._UF1000,1000_QL80_.jpg')">⚡
+          Buy Now</button>
+        <button
+          onclick="addToCart('Smart Watch X1', 4999, 'https://m.media-amazon.com/images/I/518HH8T7bSL._UF1000,1000_QL80_.jpg')">🛒
+          Add to Cart</button>
         <div class="reviews">
           <p><strong>Ravi:</strong> Battery lasts 5 days!</p>
           <p><strong>Priya:</strong> Sleek and responsive.</p>
         </div>
         <div class="offer">🔥 30% OFF – Today Only!</div>
       </div>
-<div class="card" data-name="Smart Watch X1">
+      <div class="card" data-name="Smart Watch X1">
         <img src="https://m.media-amazon.com/images/I/51+uQSsRi+L.jpg" alt="Smart Watch X1" />
-        <h3>ENTWINO Warrior, Premium Gaming Cabinet, CPU Case Supports 7 RGB Fans, USB 3.0, Tempered Glass Panels, Heavy Duty Metal Frame, Only Case Without RGB Fans & Power Supply</h3>
+        <h3>ENTWINO Warrior, Premium Gaming Cabinet, CPU Case Supports 7 RGB Fans, USB 3.0, Tempered Glass Panels, Heavy
+          Duty Metal Frame, Only Case Without RGB Fans & Power Supply</h3>
         <p>₹6,999 – Fitness, Calls, Notifications</p>
-        <button onclick="buyNow('Smart Watch X1', 4999, 'https://m.media-amazon.com/images/I/51+uQSsRi+L.jpg')">⚡ Buy Now</button>
-        <button onclick="addToCart('Smart Watch X1', 4999, 'https://m.media-amazon.com/images/I/51+uQSsRi+L.jpg')">🛒 Add to Cart</button>
+        <button onclick="buyNow('Smart Watch X1', 4999, 'https://m.media-amazon.com/images/I/51+uQSsRi+L.jpg')">⚡ Buy
+          Now</button>
+        <button onclick="addToCart('Smart Watch X1', 4999, 'https://m.media-amazon.com/images/I/51+uQSsRi+L.jpg')">🛒
+          Add to Cart</button>
         <div class="reviews">
           <p><strong>Ravi:</strong> Battery lasts 5 days!</p>
           <p><strong>Priya:</strong> Sleek and responsive.</p>
         </div>
         <div class="offer">🔥 30% OFF – Today Only!</div>
       </div>
-<div id="buyNowModal" class="modal">
-  <div class="modal-content">
-    </div>
+      <div id="buyNowModal" class="modal">
+        <div class="modal-content">
+        </div>
   </main>
 
   <footer>
     <p>© 2025 TechNova. Smart Gadgets Redefined.</p>
   </footer>
 </body>
+
 </html>

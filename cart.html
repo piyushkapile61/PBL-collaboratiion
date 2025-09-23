@@ -1,98 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>PLASTIC pani</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="D:\plastic\GITHUB\WT_PBL\PBL-collaboratiion\Stylesheet\style.css" />
+  <link rel="stylesheet" href="Stylesheet/style.css" />
+  <link rel="stylesheet" href="Stylesheet/indexstyle.css" />
+  <script src="/javascript/script.js" defer></script>
 </head>
+
 <body>
   <header>
-     <img src="22.PNG" alt="logo" class="logo">
-    <nav>
-      <b>
-  <div class="nav-bar">
-  <a href="home.html" style="border:none;">Home</a>
-  <div class="separator"></div>
-  <a href="products.html" style="border:none;">Products</a>
-  <div class="separator"></div>
-  <a href="cart.html" style="border:none;">Cart</a>
-  <div class="separator"></div>
-  <a href="contact.html" style="border:none;">Contact</a>
-   </div>
-    </nav>
-    <input type="text" id="searchInput" placeholder="Search products..." oninput="filterProducts()" />
+    <div class="navbar">
+      <ul>
+        <li style="box-shadow: none; border: none; background: none;">&nbsp;&nbsp;&nbsp;<img src="Images/icons/logo.png"
+            style="width: 45px;">
+          <a href="null" style="font-size: 17px;">SNAPDEAL</a>
+        </li>
+        <li>&nbsp;&nbsp;&nbsp;<img src="/images/icons/home.svg" alt="home"><a href="home.html">HOME </a></li>
+        <li>&nbsp;&nbsp;&nbsp;<img src="/images/icons/products.svg" alt="support"><a href="products.html">Products</a>
+        </li>
+        <li>&nbsp;&nbsp;&nbsp;<img src="/images/icons/cart.svg" alt="info"><a href="cart.html">Cart</a></li>
+        <li>&nbsp;&nbsp;&nbsp;<img src="/images/icons/contact.svg" alt="support"><a href="contact.html">CONTACT</a></li>
+        <input type="text" class="searchInput" style=" width: 358px;;margin-left: 10px;margin-top: 9px;
+         height: 38px;border-radius: 5px; background-color: #acb8f4;border: 1px solid #27273e2e;"
+          placeholder="Search products..." onkeyup="filterProducts()">
+      </ul>
+    </div>
   </header>
 
   <main>
     <h2>Your Cart</h2>
-<form id="cartForm">
-  <div id="cartItems" class="cart-grid"></div>
-  <h3 id="totalPrice"></h3>
-  <button type="submit">Confirm Purchase</button>
-</form>
+    <form id="cartForm">
+      <div id="cartItems" class="cart-grid"></div>
+      <h3 id="totalPrice"></h3>
+    </form>
   </main>
-
+  <div class="confirm" style="display: flex; justify-content: center; align-items: center;"><button
+      type="submit">Confirm Purchase</button></div>
   <footer>
     <p>© 2025 TechNova. Smart Gadgets Redefined.</p>
   </footer>
 
- <script>
-  function getCartItems() {
-    return JSON.parse(localStorage.getItem("cart")) || [];
-  }
-
-  let cartItems = getCartItems();
-  const container = document.getElementById("cartItems");
-  let total = 0;
-
-  function renderCart() {
-    container.innerHTML = "";
-    total = 0;
-
-    if (cartItems.length === 0) {
-      container.innerHTML = "<p>Your cart is empty.</p>";
-      document.getElementById("totalPrice").textContent = "";
-      return;
+  <script>
+    function getCartItems() {
+      return JSON.parse(localStorage.getItem("cart")) || [];
     }
 
-    cartItems.forEach((item, index) => {
-      const div = document.createElement("div");
-      div.className = "cart-card";
-      div.innerHTML = `
-        <input type="checkbox" name="selected" value="${index}" checked />
-        <img src="${item.image}" alt="${item.name}" style="width:100px; border-radius:8px;" />
-        <div>
-          <h4>${item.name}</h4>
-          <p>₹${item.price}</p>
-          <button onclick="removeItem(${index})">Remove</button>
-        </div>
-      `;
-      container.appendChild(div);
-      total += item.price;
+    let cartItems = getCartItems();
+    const container = document.getElementById("cartItems");
+    let total = 0;
+
+    function renderCart() {
+      container.innerHTML = "";
+      total = 0;
+
+      if (cartItems.length === 0) {
+        container.innerHTML = `
+        <img src="images/icons/enpyt_cart.png" alt="Empty Cart" style="width:400px; height:auto;;">`;
+        document.getElementById("totalPrice").textContent = "";
+        return;
+      }
+
+      cartItems.forEach((item, index) => {
+    const div = document.createElement("div");
+    div.className = "cart-card001";
+    div.innerHTML = `
+      <input type="checkbox" name="selected" value="${index}" hidden />
+      <div class="cart-card">
+      <img src="${item.image}" alt="${item.name}" style="width:150px; border-radius:10px;" />
+      <div class="cart-info">
+        <h3>${item.name}</h3>
+        <p>₹${item.price}</p>
+        <button onclick="removeItem(${index})">Remove</button>
+      </div>
+      </div>
+    `;
+    container.appendChild(div);
+    total += item.price;
+});
+
+      document.getElementById("totalPrice").textContent = `Total: ₹${total}`;
+    }
+
+    function removeItem(index) {
+      cartItems.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+      renderCart();
+    }
+
+    document.getElementById("cartForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const selectedIndexes = Array.from(document.querySelectorAll('input[name="selected"]:checked'))
+        .map(input => parseInt(input.value));
+
+      const selectedItems = selectedIndexes.map(i => cartItems[i]);
+      localStorage.setItem("checkoutItems", JSON.stringify(selectedItems));
+      window.location.href = "checkout.html";
     });
 
-    document.getElementById("totalPrice").textContent = `Total: ₹${total}`;
-  }
-
-  function removeItem(index) {
-    cartItems.splice(index, 1);
-    localStorage.setItem("cart", JSON.stringify(cartItems));
     renderCart();
-  }
 
-  document.getElementById("cartForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    const selectedIndexes = Array.from(document.querySelectorAll('input[name="selected"]:checked'))
-      .map(input => parseInt(input.value));
-
-    const selectedItems = selectedIndexes.map(i => cartItems[i]);
-    localStorage.setItem("checkoutItems", JSON.stringify(selectedItems));
-    window.location.href = "checkout.html";
-  });
-
-renderCart();
-  
-</script>
+  </script>
 </body>
+
 </html>

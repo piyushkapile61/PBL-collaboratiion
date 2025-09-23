@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>TechNova – Checkout</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/Stylesheet/style.css" />
+  <link rel="stylesheet" href="/Stylesheet/indexstyle.css" />
   <script src="script.js" defer></script>
 </head>
+
 <body style="text-align: center;">
   <header>
-    <h1>Deliver Address & Payment Options</h1>
-    <nav><b>
-  <div class="nav-bar">
-  <a href="home.html" style="border:none;">Home</a>
-  <div class="separator"></div>
-  <a href="products.html" style="border:none;">Products</a>
-  <div class="separator"></div>
-  <a href="cart.html" style="border:none;">Cart</a>
-  <div class="separator"></div>
-  <a href="contact.html" style="border:none;">Contact</a>
-  </div>
-  </b>
-  </nav>
+    <div class="navbar">
+      <ul>
+        <li style="box-shadow: none; border: none; background: none;">&nbsp;&nbsp;&nbsp;<img src="Images/icons/logo.png"
+            style="width: 45px;">
+          <a href="null" style="font-size: 17px;">SNAPDEAL</a>
+        </li>
+        <li>&nbsp;&nbsp;&nbsp;<img src="/images/icons/home.svg" alt="home"><a href="home.html">HOME </a></li>
+        <li>&nbsp;&nbsp;&nbsp;<img src="/images/icons/products.svg" alt="support"><a href="products.html">Products</a>
+        </li>
+        <li>&nbsp;&nbsp;&nbsp;<img src="/images/icons/cart.svg" alt="info"><a href="cart.html">Cart</a></li>
+        <li>&nbsp;&nbsp;&nbsp;<img src="/images/icons/contact.svg" alt="support"><a href="contact.html">CONTACT</a></li>
+        <input type="text" class="searchInput" style=" width: 358px;;margin-left: 10px;margin-top: 9px;
+         height: 38px;border-radius: 5px; background-color: #acb8f4;border: 1px solid #27273e2e;"
+          placeholder="Search products..." onkeyup="filterProducts()">
+      </ul>
+    </div>
   </header>
 
   <main>
@@ -47,9 +53,9 @@
       <button type="submit">Place Order</button>
     </form>
     <div id="successAnimation" class="success-box">
-  <div class="tick-mark">&#10004;</div>
-  <h3>Order Placed Successfully!</h3>
-</div>
+      <div class="tick-mark">&#10004;</div>
+      <h3>Order Placed Successfully!</h3>
+    </div>
   </main>
   <div id="orderSummary"></div>
 
@@ -58,33 +64,34 @@
   </footer>
 
   <script>
-  const items = JSON.parse(localStorage.getItem("checkoutItems")) || [];
-  const summary = document.getElementById("orderSummary");
+    const items = JSON.parse(localStorage.getItem("checkoutItems")) || [];
+    const summary = document.getElementById("orderSummary");
 
-  if (items.length === 0) {
-    summary.innerHTML = "<p>No items selected.</p>";
-  } else {
-    let total = 0;
-    items.forEach(item => {
-      const div = document.createElement("div");
-      div.className = "checkout-item";
-      div.innerHTML = `
+    if (items.length === 0) {
+      summary.innerHTML = "<p>No items selected.</p>";
+    } else {
+      let total = 0;
+      items.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "checkout-item";
+        div.innerHTML = `
         <img src="${item.image}" alt="${item.name}" style="width:100px; border-radius:8px;" />
         <p><strong>${item.name}</strong><br>₹${item.price}</p>
       `;
-      summary.appendChild(div);
-      total += item.price;
-    });
-    const totalDiv = document.createElement("h3");
-    totalDiv.textContent = `Total: ₹${total}`;
-    summary.appendChild(totalDiv);
-  }
+        summary.appendChild(div);
+        total += item.price;
+      });
+      const totalDiv = document.createElement("h3");
+      totalDiv.textContent = `Total: ₹${total}`;
+      summary.appendChild(totalDiv);
+    }
 
-  document.getElementById("checkoutForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    localStorage.removeItem("checkoutItems");
-    window.location.href = "order-success.html";
-  });
-</script>
+    document.getElementById("checkoutForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      localStorage.removeItem("checkoutItems");
+      window.location.href = "order-success.html";
+    });
+  </script>
 </body>
+
 </html>
