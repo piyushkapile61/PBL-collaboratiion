@@ -86,28 +86,38 @@
     <!-- Header & Navigation -->
     <header id="header" class="bg-white shadow-md sticky top-0 z-50 transition-all duration-300">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="font-playfair text-2xl font-bold text-gray-800 tracking-wider">
-                <i class="fa-solid fa-gem text-yellow-500"></i> SNAPDEAL
-            </a>
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="home.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium active">Home</a>
-                <a href="products.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium">Products</a>
-                <a href="cart.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium">Cart</a>
-                <a href="contact.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium">Contact</a>
-            </div>
-            <a href="#booking" class="hidden md:inline-block btn-primary rounded-lg px-6 py-2 font-semibold shadow-lg">Book Now</a>
-            <button id="mobile-menu-button" class="md:hidden text-2xl">
-                <i class="fas fa-bars"></i>
-            </button>
-        </nav>
+      <a href="#" class="font-playfair text-2xl font-bold text-gray-800 tracking-wider flex items-center space-x-2">
+        <img src="Images/icons/logo.png" alt="Logo" class="w-6 h-6">
+        <span style="color: black;">SNAPDEAL</span>
+      </a>
+
+  <div class="hidden md:flex items-center space-x-6">
+    <a href="home.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium active">Home</a>
+    <a href="products.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium">Products</a>
+    <a href="cart.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium">Cart</a>
+    <a href="contact.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium">Contact</a>
+    <input type="text" class="w-64 px-4 py-2 rounded-md bg-green-200 bg-opacity-40 border border-gray-300 placeholder-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="Search products..." onkeyup="filterProducts()">
+    
+    <!-- Profile Icon -->
+    <a href="login.html" title="Login / Profile">
+      <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png"
+           alt="Profile"
+           class="w-10 h-10 rounded-full border-2 border-gray-300 hover:border-yellow-500 transition duration-300" />
+    </a>
+  </div>
+
+  <!-- Mobile Menu Toggle -->
+  <button id="mobile-menu-button" class="md:hidden text-2xl text-gray-700">
+    <i class="fas fa-bars"></i>
+  </button>
+</nav>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
             <a href="home.html" class="block py-2 text-gray-600 mobile-nav-link">Home</a>
             <a href="products.html" class="block py-2 text-gray-600 mobile-nav-link">Our Rooms</a>
             <a href="cart.html" class="block py-2 text-gray-600 mobile-nav-link">Booking</a>
             <a href="contact.html" class="block py-2 text-gray-600 mobile-nav-link">Contact</a>
-            <a href="#booking" class="mt-2 w-full block text-center btn-primary rounded-lg px-6 py-2 font-semibold shadow-lg">Book Now</a>
-        </div>
+    
     </header>
 
   <main class="content-overlay">
