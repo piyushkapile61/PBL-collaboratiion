@@ -23,8 +23,8 @@
         </li>
         <li>&nbsp;&nbsp;&nbsp;<img src="/images/icons/cart.svg" alt="info"><a href="cart.html">Cart</a></li>
         <li>&nbsp;&nbsp;&nbsp;<img src="/images/icons/contact.svg" alt="support"><a href="contact.html">CONTACT</a></li>
-        <input type="text" class="searchInput" style=" width: 358px;;margin-left: 10px;margin-top: 9px;
-         height: 38px;border-radius: 5px; background-color: #acb8f4;border: 1px solid #27273e2e;"
+        <input type="text" class="searchInput" style=" width: 31%;;margin-left: 10px;margin-top: 9px;
+         height: 38px;border-radius: 5px; background-color: #1cd78079;border: 1px solid #27273e2e;"
           placeholder="Search products..." onkeyup="filterProducts()">
       </ul>
     </div>
@@ -37,8 +37,9 @@
       <h3 id="totalPrice"></h3>
     </form>
   </main>
-  <div class="confirm" style="display: flex; justify-content: center; align-items: center;"><button
-      type="submit">Confirm Purchase</button></div>
+  <div class="confirm" style="display: flex; justify-content: center; align-items: center;"><button type="submit"
+      onclick="buyNow()"> <a href="checkout.html" style="text-decoration: none;">Confirm Purchase</a> </button></div>
+
   <footer>
     <p>© 2025 Snapdeal. Smart Gadgets Redefined.</p>
   </footer>
@@ -51,23 +52,23 @@
     let cartItems = getCartItems();
     const container = document.getElementById("cartItems");
     let total = 0;
-
+    
     function renderCart() {
       container.innerHTML = "";
       total = 0;
 
       if (cartItems.length === 0) {
         container.innerHTML = `
-        <img src="images/icons/enpyt_cart.png" alt="Empty Cart" style="width:400px; height:auto;;">`;
+        <img src="images/icons/enpyt_cart.png" alt="Empty Cart" style="width:400px; height:auto; padding-left: 96%;">`;
         document.getElementById("totalPrice").textContent = "";
         return;
       }
 
       cartItems.forEach((item, index) => {
-    const div = document.createElement("div");
-    div.className = "cart-card001";
-    div.innerHTML = `
-      <input type="checkbox" name="selected" value="${index}" hidden />
+        const div = document.createElement("div");
+        div.className = "cart-card001";
+        div.innerHTML = `
+      <input type="checkbox" name="selected" value="${index}"  />
       <div class="cart-card">
       <img src="${item.image}" alt="${item.name}" style="width:150px; border-radius:10px;" />
       <div class="cart-info">
@@ -77,9 +78,9 @@
       </div>
       </div>
     `;
-    container.appendChild(div);
-    total += item.price;
-});
+        container.appendChild(div);
+        total += item.price;
+      });
 
       document.getElementById("totalPrice").textContent = `Total: ₹${total}`;
     }

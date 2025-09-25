@@ -6,9 +6,9 @@
   <title>TechNova – Checkout</title>
   <link rel="stylesheet" href="/Stylesheet/style.css" />
   <link rel="stylesheet" href="/Stylesheet/indexstyle.css" />
+  <link rel="stylesheet" href="Stylesheet/inputs.css" />
   <script src="script.js" defer></script>
-</head>
-
+  
 <body style="text-align: center;">
   <header>
     <div class="navbar">
@@ -22,40 +22,57 @@
         </li>
         <li>&nbsp;&nbsp;&nbsp;<img src="/images/icons/cart.svg" alt="info"><a href="cart.html">Cart</a></li>
         <li>&nbsp;&nbsp;&nbsp;<img src="/images/icons/contact.svg" alt="support"><a href="contact.html">CONTACT</a></li>
-        <input type="text" class="searchInput" style=" width: 358px;;margin-left: 10px;margin-top: 9px;
-         height: 38px;border-radius: 5px; background-color: #acb8f4;border: 1px solid #27273e2e;"
+        <input type="text" class="searchInput" style="width: 31%;margin-left: 10px;margin-top: 9px;
+         height: 38px;border-radius: 5px; background-color: #1cd78079;border: 1px solid #27273e2e;"
           placeholder="Search products..." onkeyup="filterProducts()">
       </ul>
     </div>
   </header>
 
-  <main>
-    <h2>Confirm Your Order</h2>
-    <div id="orderSummary"></div>
+  <main class="checkout-container">
+    <h2 style="text-align: center; margin-bottom: 30px;">🛒 Checkout</h2>
 
-    <h3>Shipping Address</h3>
-    <form id="checkoutForm">
-      <input type="text" placeholder="Full Name" required /><br />
-      <input type="text" placeholder="Address Line 1" required /><br />
-      <input type="text" placeholder="City" required /><br />
-      <input type="text" placeholder="Postal Code" required /><br />
-      <input type="text" placeholder="Phone Number" required /><br />
+    <!-- Order Summary -->
+    <div id="orderSummary" class="order-summary"></div>
 
-      <h3>Payment Method</h3>
-      <select required>
-        <option value="">Select</option>
-        <option>UPI</option>
-        <option>Credit/Debit Card</option>
-        <option>Net Banking</option>
-        <option>Cash on Delivery</option>
-      </select><br /><br />
+    <!-- Shipping Form -->
+    <div class="form-section">
+      <h3>📦 Shipping Address</h3>
+      <form id="checkoutForm">
+        <div class="form-group">
+          <input type="text" id="fullName" placeholder="Full Name *" required />
+        </div>
+        <div class="form-group">
+          <input type="text" id="address" placeholder="Address Line 1 *" required />
+        </div>
+        <div class="form-group">
+          <input type="text" id="city" placeholder="City *" required />
+        </div>
+        <div class="form-group">
+          <input type="text" id="postalCode" placeholder="Postal Code *" required pattern="[0-9]{6}" />
+        </div>
+        <div class="form-group">
+          <input type="tel" id="phoneNumber" placeholder="Phone Number * (10 digits)" required pattern="[0-9]{10}"
+            maxlength="10" />
+        </div>
 
-      <button type="submit">Place Order</button>
-    </form>
-    <div id="successAnimation" class="success-box">
-      <div class="tick-mark">&#10004;</div>
-      <h3>Order Placed Successfully!</h3>
-    </div>
+        <h3>💳 Payment Method</h3>
+        <div class="form-group">
+          <select id="paymentMethod" required>
+            <option value="">Select Payment Method</option>
+            <option value="upi">UPI Payment</option>
+            <option value="card">Credit/Debit Card</option>
+            <option value="netbanking">Net Banking</option>
+            <option value="cod">Cash on Delivery</option>
+          </select>
+        </div>
+
+        <button type="submit">Place Order</button>
+      </form>
+      <div id="successAnimation" class="success-box">
+        <div class="tick-mark">&#10004;</div>
+        <h3>Order Placed Successfully!</h3>
+      </div>
   </main>
   <div id="orderSummary"></div>
 
@@ -67,8 +84,8 @@
     const items = JSON.parse(localStorage.getItem("checkoutItems")) || [];
     const summary = document.getElementById("orderSummary");
 
-    if (items.length === 0) {
-      summary.innerHTML = "<p>No items selected.</p>";
+    if (items.length == 0) {
+      // summary.innerHTML = "<p>No items selected.</p>";
     } else {
       let total = 0;
       items.forEach(item => {

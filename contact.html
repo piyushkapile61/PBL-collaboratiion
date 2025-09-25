@@ -6,7 +6,24 @@
   <title>TechNova – Contact</title>
   <link rel="stylesheet" href="/Stylesheet/style.css" />
   <link rel="stylesheet" href="/Stylesheet/indexstyle.css" />
+  <link rel="stylesheet" href="Stylesheet/inputs.css" />
   <script src="script.js" defer></script>
+  <style>
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      margin: 5px;
+    }
+
+    .form-section {
+      margin-left: 20%;
+    }
+
+    button {
+      margin-left: 40%;
+      margin-top: 7%;
+    }
+  </style>
 </head>
 
 <body>
@@ -22,22 +39,26 @@
         </li>
         <li>&nbsp;&nbsp;&nbsp;<img src="/images/icons/cart.svg" alt="info"><a href="cart.html">Cart</a></li>
         <li>&nbsp;&nbsp;&nbsp;<img src="/images/icons/contact.svg" alt="support"><a href="contact.html">CONTACT</a></li>
-        <input type="text" class="searchInput" style=" width: 358px;;margin-left: 10px;margin-top: 9px;
-         height: 38px;border-radius: 5px; background-color: #acb8f4;border: 1px solid #27273e2e;"
+        <input type="text" class="searchInput" style=" width: 31%;margin-left: 10px;margin-top: 9px;
+         height: 38px;border-radius: 5px; background-color: #1cd78079;border: 1px solid #27273e2e;"
           placeholder="Search products..." onkeyup="filterProducts()">
       </ul>
     </div>
   </header>
 
   <main>
+    <!-- <a href="waste.html">ef</a> -->
     <h2>Contact Us</h2>
     <p>Need help or want to share feedback? Reach out below.</p>
-    <form onsubmit="submitContact(event)">
-      <input type="text" placeholder="Your Name" required /><br>
-      <input type="email" placeholder="Your Email" required /><br>
-      <textarea placeholder="Your Message" rows="5" required></textarea><br>
-      <button type="submit">Send Message</button>
-    </form>
+    <div class="form-section">
+
+      <form onsubmit="submitContact(event)" class="form-group">
+        <input type="text" placeholder="Your Name" required /><br>
+        <input type="email" placeholder="Your Email" required /><br>
+        <textarea placeholder="Leave a Message" rows="1" required></textarea><br>
+        <button type="submit" class="form-group">Send Message</button>
+      </form>
+    </div>
   </main>
 
   <footer>

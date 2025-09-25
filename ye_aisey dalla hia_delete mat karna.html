@@ -1,0 +1,542 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>SNAPDEAL - Checkout</title>
+  <link rel="stylesheet" href="/Stylesheet/style.css" />
+  <link rel="stylesheet" href="/Stylesheet/indexstyle.css" />
+  <style>
+    .checkout-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .order-summary {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    .checkout-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 8px;
+    }
+
+    .checkout-item img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .checkout-item-info {
+      flex-grow: 1;
+    }
+
+    .checkout-item-info h4 {
+      margin: 0;
+      color: #1cd780;
+    }
+
+    .checkout-item-info p {
+      margin: 5px 0 0 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 20px;
+    }.form-section 
+
+    .form-section h3 {
+      color: #1cd780;
+      margin-top: 0;
+      border-bottom: 2px solid #1cd780;
+      padding-bottom: 10px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #555;
+      border-radius: 8px;
+      background: #2a2a2a;
+      color: white;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: #1cd780;
+      outline: none;
+      box-shadow: 0 0 5px rgba(28, 215, 128, 0.3);
+    }
+
+    .otp-container {
+      display: none;
+      background: linear-gradient(135deg, #1cd780, #16b36a);
+      color: #000;
+      border-radius: 15px;
+      padding: 30px;
+      margin: 30px 0;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(28, 215, 128, 0.3);
+    }
+
+    .otp-container h3 {
+      color: #000;
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    .otp-inputs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 25px 0;
+    }
+
+    .otp-input {
+      width: 50px !important;
+      height: 50px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      background: white;
+      color: #000;
+    }
+
+    .otp-input:focus {
+      border-color: #000;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .timer {
+      font-size: 18px;
+      font-weight: bold;
+      color: #d32f2f;
+      margin: 15px 0;
+    }
+
+    .otp-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .btn-primary {
+      background: #1cd780;
+      color: #000;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: #16b36a;
+      transform: translateY(-2px);
+    }
+
+    .btn-primary:disabled {
+      background: #666;
+      color: #999;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #000;
+      border: 2px solid #000;
+      padding: 13px 28px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .btn-secondary:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .success-animation {
+      display: none;
+      text-align: center;
+      padding: 50px;
+      background: linear-gradient(135deg, #1cd780, #16b36a);
+      border-radius: 15px;
+      color: #000;
+      animation: slideIn 0.5s ease;
+    }
+
+    .success-tick {
+      font-size: 80px;
+      animation: bounce 0.6s ease;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bounce {
+      0%, 20%, 60%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-20px); }
+      80% { transform: translateY(-10px); }
+    }
+
+    .total-amount {
+      text-align: center;
+      font-size: 28px;
+      color: #1cd780;
+      margin: 20px 0;
+      padding: 15px;
+      background: rgba(28, 215, 128, 0.1);
+      border-radius: 10px;
+      border: 2px solid rgba(28, 215, 128, 0.3);
+    }
+  </style>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <div class="navbar">
+      <ul>
+        <li style="box-shadow: none; border: none; background: none;">&nbsp;&nbsp;&nbsp;<img src="Images/icons/logo.png"
+            style="width: 45px;">
+          <a href="null" style="font-size: 17px;">SNAPDEAL</a>
+        </li>
+        <li>&nbsp;&nbsp;&nbsp;<img src="/images/icons/home.svg" alt="home"><a href="home.html">HOME </a></li>
+        <li>&nbsp;&nbsp;&nbsp;<img src="/images/icons/products.svg" alt="support"><a href="products.html">Products</a>
+        </li>
+        <li>&nbsp;&nbsp;&nbsp;<img src="/images/icons/cart.svg" alt="info"><a href="cart.html">Cart</a></li>
+        <li>&nbsp;&nbsp;&nbsp;<img src="/images/icons/contact.svg" alt="support"><a href="contact.html">CONTACT</a></li>
+        <input type="text" class="searchInput" style=" width: 358px;;margin-left: 10px;margin-top: 9px;
+         height: 38px;border-radius: 5px; background-color: #acb8f4;border: 1px solid #27273e2e;"
+          placeholder="Search products..." onkeyup="filterProducts()">
+      </ul>
+    </div>
+  </header>
+
+  <main class="checkout-container">
+    <h2 style="text-align: center; margin-bottom: 30px;">🛒 Checkout</h2>
+    
+    <!-- Order Summary -->
+<div id="orderSummary" class="order-summary"></div>
+
+<!-- Shipping Form -->
+<div class="form-section">
+  <h3>📦 Shipping Address</h3>
+  <form id="checkoutForm">
+    <div class="form-group">
+      <input type="text" id="fullName" placeholder="Full Name *" required />
+    </div>
+    <div class="form-group">
+      <input type="text" id="address" placeholder="Address Line 1 *" required />
+    </div>
+    <div class="form-group">
+      <input type="text" id="city" placeholder="City *" required />
+    </div>
+    <div class="form-group">
+      <input type="text" id="postalCode" placeholder="Postal Code *" required pattern="[0-9]{6}" />
+    </div>
+    <div class="form-group">
+      <input type="tel" id="phoneNumber" placeholder="Phone Number * (10 digits)" required pattern="[0-9]{10}"
+        maxlength="10" />
+    </div>
+
+    <h3>💳 Payment Method</h3>
+    <div class="form-group">
+      <select id="paymentMethod" required>
+        <option value="">Select Payment Method</option>
+        <option value="upi">UPI Payment</option>
+        <option value="card">Credit/Debit Card</option>
+        <option value="netbanking">Net Banking</option>
+        <option value="cod">Cash on Delivery</option>
+      </select>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+      <button type="submit" id="proceedBtn" class="btn-primary">🔐 Send OTP & Proceed</button>
+    </div>
+  </form>
+</div>
+
+<!-- OTP Verification -->
+<div id="otpContainer" class="otp-container">
+  <h3>🔐 OTP Verification</h3>
+  <p style="font-size: 16px; margin-bottom: 20px;">
+    Enter the 6-digit OTP sent to <span id="maskedPhone" style="font-weight: bold;"></span>
+  </p>
+
+  <div class="otp-inputs">
+    <input type="text" class="otp-input" maxlength="1" data-index="0">
+    <input type="text" class="otp-input" maxlength="1" data-index="1">
+    <input type="text" class="otp-input" maxlength="1" data-index="2">
+    <input type="text" class="otp-input" maxlength="1" data-index="3">
+    <input type="text" class="otp-input" maxlength="1" data-index="4">
+    <input type="text" class="otp-input" maxlength="1" data-index="5">
+  </div>
+
+  <div class="timer" id="timer">Time remaining: 02:00</div>
+
+  <div class="otp-buttons">
+    <button type="button" id="verifyOtpBtn" class="btn-primary" onclick="verifyOTP()">✅ Verify & Place Order</button>
+    <button type="button" id="resendBtn" class="btn-secondary" onclick="resendOTP()" disabled>🔄 Resend OTP</button>
+  </div>
+</div>
+
+<!-- Success Animation -->
+<div id="successAnimation" class="success-animation">
+  <div class="success-tick">✅</div>
+  <h2>Order Placed Successfully!</h2>
+  <p>Thank you for shopping with SNAPDEAL!</p>
+  <p>You will receive a confirmation email shortly.</p>
+</div>
+</main>
+
+<footer>
+  <p>© 2025 Snapdeal. Smart Gadgets Redefined.</p>
+</footer>
+
+<script>
+  // Load checkout items
+  const items = JSON.parse(localStorage.getItem("checkoutItems")) || [];
+  let generatedOTP = '';
+  let timerInterval;
+
+  // Display order summary
+  function displayOrderSummary() {
+    const summary = document.getElementById("orderSummary");
+
+    if (items.length === 0) {
+      summary.innerHTML = `
+          <div style="text-align: center; padding: 40px;">
+            <h3>❌ No items selected</h3>
+            <p>Please go back to your cart and select items for checkout.</p>
+            <a href="cart.html" class="btn-primary" style="display: inline-block; margin-top: 15px; text-decoration: none;">← Back to Cart</a>
+          </div>`;
+      return;
+    }
+
+    let total = 0;
+    let summaryHTML = '<h3 style="color: #1cd780; text-align: center;">📋 Order Summary</h3>';
+
+    items.forEach(item => {
+      summaryHTML += `
+          <div class="checkout-item">
+            <img src="${item.image}" alt="${item.name}" />
+            <div class="checkout-item-info">
+              <h4>${item.name}</h4>
+              <p>₹${item.price.toLocaleString()}</p>
+            </div>
+          </div>
+        `;
+      total += item.price;
+    });
+
+    summaryHTML += `
+        <div class="total-amount">
+          <strong>💰 Total Amount: ₹${total.toLocaleString()}</strong>
+        </div>
+      `;
+
+    summary.innerHTML = summaryHTML;
+  }
+
+  // OTP Functions
+  function generateOTP() {
+    return Math.floor(100000 + Math.random() * 900000).toString();
+  }
+
+  function maskPhoneNumber(phone) {
+    return phone.replace(/(\d{2})\d{6}(\d{2})/, '$1******$2');
+  }
+
+  function startTimer() {
+    let timeLeft = 120;
+    const timerElement = document.getElementById('timer');
+    const resendBtn = document.getElementById('resendBtn');
+
+    timerInterval = setInterval(() => {
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
+      timerElement.textContent = `⏱️ Time remaining: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+      if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        timerElement.textContent = '❌ OTP expired - Click resend';
+        timerElement.style.color = '#ff4757';
+        resendBtn.disabled = false;
+      }
+      timeLeft--;
+    }, 1000);
+  }
+
+  function sendOTP(phoneNumber) {
+    generatedOTP = generateOTP();
+    console.log('🔐 Generated OTP:', generatedOTP);
+
+    // Show OTP container with animation
+    const otpContainer = document.getElementById('otpContainer');
+    const form = document.getElementById('checkoutForm');
+
+    form.style.display = 'none';
+    otpContainer.style.display = 'block';
+
+    document.getElementById('maskedPhone').textContent = maskPhoneNumber(phoneNumber);
+
+    // Start timer
+    startTimer();
+
+    // Focus first OTP input
+    document.querySelector('.otp-input').focus();
+
+    // Show demo OTP
+    alert(`🔐 Demo OTP sent to ${phoneNumber}\nOTP: ${generatedOTP}\n\n(In production, this would be sent via SMS)`);
+  }
+
+  function resendOTP() {
+    const phoneNumber = document.getElementById('phoneNumber').value;
+    generatedOTP = generateOTP();
+    console.log('🔄 Resent OTP:', generatedOTP);
+
+    // Reset timer
+    clearInterval(timerInterval);
+    document.getElementById('timer').style.color = '#d32f2f';
+    document.getElementById('resendBtn').disabled = true;
+    startTimer();
+
+    // Clear OTP inputs
+    document.querySelectorAll('.otp-input').forEach(input => {
+      input.value = '';
+      input.style.borderColor = '#fff';
+    });
+    document.querySelector('.otp-input').focus();
+
+    alert(`🔄 New OTP sent: ${generatedOTP}`);
+  }
+
+  function verifyOTP() {
+    const otpInputs = document.querySelectorAll('.otp-input');
+    let enteredOTP = '';
+
+    otpInputs.forEach(input => {
+      enteredOTP += input.value;
+    });
+
+    if (enteredOTP.length !== 6) {
+      alert('❌ Please enter all 6 digits of the OTP');
+      return;
+    }
+
+    if (enteredOTP === generatedOTP) {
+      // Success!
+      clearInterval(timerInterval);
+
+      // Hide OTP container
+      document.getElementById('otpContainer').style.display = 'none';
+
+      // Show success animation
+      document.getElementById("successAnimation").style.display = "block";
+
+      // Clear checkout items
+      localStorage.removeItem("checkoutItems");
+
+      // Redirect after animation
+      setTimeout(() => {
+        window.location.href = "order-success.html";
+      }, 3000);
+
+    } else {
+      // Wrong OTP
+      alert('❌ Invalid OTP. Please try again.');
+      otpInputs.forEach(input => {
+        input.value = '';
+        input.style.borderColor = '#ff4757';
+      });
+      setTimeout(() => {
+        otpInputs.forEach(input => input.style.borderColor = '#fff');
+      }, 1000);
+      otpInputs[0].focus();
+    }
+  }
+
+  // Form submission
+  document.getElementById("checkoutForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const phoneNumber = document.getElementById('phoneNumber').value;
+
+    if (phoneNumber.length !== 10 || !/^\d+$/.test(phoneNumber)) {
+      alert('❌ Please enter a valid 10-digit phone number');
+      document.getElementById('phoneNumber').focus();
+      return;
+    }
+
+    if (items.length === 0) {
+      alert('❌ No items to checkout');
+      return;
+    }
+
+    // Show loading
+    const btn = document.getElementById('proceedBtn');
+    btn.textContent = 'Sending OTP...';
+    btn.disabled = true;
+
+    setTimeout(() => {
+      sendOTP(phoneNumber);
+      btn.textContent = '🔐 Send OTP & Proceed';
+      btn.disabled = false;
+    }, 1500);
+  });
+
+  // OTP input handling
+  document.querySelectorAll('.otp-input').forEach((input, index) => {
+    // Auto-advance to next input
+    input.addEventListener('input', (e) => {
+      if (e.target.value.length === 1) {
+        const nextInput = document.querySelector(`input[data-index="${index + 1}"]`);
+        if (nextInput) nextInput.focus();
+      }
+    });
+
+    // Backspace handling
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Backspace' && e.target.value === '') {
+        const prevInput = document.querySelector(`input[data-index="${index - 1}"]`);
+        if (prevInput) {
+          prevInput.focus();
+          prevInput.value = '';
+        }
+      }
+    }); 
+      
+      
+      
+      -->
