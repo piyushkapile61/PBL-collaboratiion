@@ -48,14 +48,23 @@
 
   <main>
     <!-- <a href="waste.html">ef</a> -->
-    <h2>Contact Us</h2>
+    <h1 style="text-align: center;">Contact Us</h1 style="text-align: center;">
     <p>Need help or want to share feedback? Reach out below.</p>
     <div class="form-section">
 
       <form onsubmit="submitContact(event)" class="form-group">
+        <h2 for="experience">Your Information</h2>
         <input type="text" placeholder="Your Name" required /><br>
         <input type="email" placeholder="Your Email" required /><br>
         <textarea placeholder="Leave a Message" rows="1" required></textarea><br>
+        <h2 for="experience">📝 How was your experience?</h2>
+        <select id="experience" name="experience" required>
+          <option value="">Select one</option>
+          <option value="excellent">Excellent</option>
+          <option value="good">Good</option>
+          <option value="average">Average</option>
+          <option value="poor">Poor</option>
+        </select><br>
         <button type="submit" class="form-group">Send Message</button>
       </form>
     </div>
