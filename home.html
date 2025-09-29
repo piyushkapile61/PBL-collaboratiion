@@ -4,121 +4,39 @@
 <head>
   <meta charset="UTF-8" />
   <title>Plactic</title>
+  <link rel="icon" href="/favicon.ico" type=Images/icons/logo.png"> 
   <link rel="stylesheet" href="/Stylesheet/style.css" />
   <link rel="stylesheet" href="/Stylesheet/indexstyle.css" />
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
   <script src="javascript/script.js"></script>
-  
   <script src="javascript/spinwheel.js"></script>
-  <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <style>
-        /* Custom styles to complement Tailwind */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f9fa; /* Light gray background */
-        }
-        .font-playfair {
-            font-family: 'Playfair Display', serif;
-        }
-        .nav-link {
-            position: relative;
-            transition: color 0.3s;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #D4AF37; /* Gold accent */
-            transition: width 0.3s;
-        }
-        .nav-link.active::after, .nav-link:hover::after {
-            width: 100%;
-        }
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/1920x1080/000000/FFFFFF?text=Luxury+Hotel+Lobby') no-repeat center center/cover;
-        }
-        .form-input {
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-        .form-input:focus {
-            border-color: #D4AF37;
-            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25);
-        }
-        .btn-primary {
-            background-color: #D4AF37;
-            color: #fff;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        .btn-primary:hover {
-            background-color: #c09b2e;
-            transform: translateY(-2px);
-        }
-        /* Page transition effect */
-        .page {
-            display: none; /* Hidden by default */
-            animation: fadeIn 0.8s ease-in-out;
-        }
-        .page.active {
-            display: block;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
 </head>
 <!--To Do-->
 <!--1 Change allert after adding to cart-->
 <!--2 update Order and contact form-->
 <!--3-->
 <body>
-    <!-- Header & Navigation -->
-    <header id="header" class="bg-white shadow-md sticky top-0 z-50 transition-all duration-300">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="#" class="font-playfair text-2xl font-bold text-gray-800 tracking-wider flex items-center space-x-2">
-        <img src="Images/icons/logo.png" alt="Logo" class="w-6 h-6">
-        <span style="color: black;">SNAPDEAL</span>
-      </a>
-
-  <div class="hidden md:flex items-center space-x-6">
-    <a href="home.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium active">Home</a>
-    <a href="products.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium">Products</a>
-    <a href="cart.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium">Cart</a>
-    <a href="contact.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium">Contact</a>
-    <input type="text" class="w-64 px-4 py-2 rounded-md bg-green-200 bg-opacity-40 border border-gray-300 placeholder-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="Search products..." onkeyup="filterProducts()">
-    
-    <!-- Profile Icon -->
-    <a href="login.html" title="Login / Profile">
-      <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png"
-           alt="Profile"
-           class="w-10 h-10 rounded-full border-2 border-gray-300 hover:border-yellow-500 transition duration-300" />
-    </a>
-  </div>
-
-  <!-- Mobile Menu Toggle -->
-  <button id="mobile-menu-button" class="md:hidden text-2xl text-gray-700">
-    <i class="fas fa-bars"></i>
-  </button>
-</nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-            <a href="home.html" class="block py-2 text-gray-600 mobile-nav-link">Home</a>
-            <a href="products.html" class="block py-2 text-gray-600 mobile-nav-link">Our Rooms</a>
-            <a href="cart.html" class="block py-2 text-gray-600 mobile-nav-link">Booking</a>
-            <a href="contact.html" class="block py-2 text-gray-600 mobile-nav-link">Contact</a>
-    
-    </header>
+  <header>
+    <div >
+      <ul class="nav-links" >
+        <li class="forward" style="box-shadow: none; border: none; background: none;">&nbsp;&nbsp;&nbsp;<img src="Images/icons/logo.png"
+            style="width: 45px;">
+        </li>
+        <li class="forward"><a href="null">SNAPDEAL</a></li>
+        <li class="forward" ><a href="home.html">HOME </a></li>
+        <li class="forward" ><a href="products.html">PRODUCTS</a>
+        </li>
+        <li class="forward" ><a href="cart.html">CART</a></li>
+        <li class="forward" ><a href="contact.html">CONTACT</a></li>
+        <input type="text" class="searchInput" style=" width: 358px;;margin-left: 10px;margin-top: 9px;
+         height: 38px;border-radius: 5px; background-color: #acb8f4;border: 1px solid #27273e2e;"
+          placeholder="Search products..." onkeyup="filterProducts()">
+          <li?><a href="login.html" title="Login / Profile">
+          <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile" width="10%" >
+        </a></li>
+      </ul>
+    </div>
+  </header>
 
   <main class="content-overlay">
     <section class="slideshow-container">
