@@ -72,8 +72,8 @@ body {
 
   .searchInputoo1 {
     height: 36px;
-    border-radius: 5px;
-    background-color: #acb8f4;
+    border-radius: 10px;
+    background-color: #ffffff;
     border: 1px solid #27273e2e;
     padding-left: 2%;
     padding-right: 2px;
@@ -104,8 +104,8 @@ body {
   .card img {
     width: 100%;
     border-radius: 8px;
+    height: 285px;
   }
-
   .reviews {
     margin-top: 0.5rem;
     font-size: 0.9rem;
