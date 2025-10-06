@@ -10,6 +10,7 @@
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
   <script src="javascript/script.js"></script>
   <script src="javascript/spinwheel.js"></script>
+  <script src="javascript/darkmode.js"></script>
 </head>
 <!--To Do-->
 <!--1 Change allert after adding to cart-->
@@ -28,6 +29,8 @@
         </li>
         <li class="forward" ><a href="cart.html">CART</a></li>
         <li class="forward" ><a href="contact.html">CONTACT</a></li>
+        <li><button id="darkModeToggle" style="background: #ccc;">🌓</button></li>
+
         <input type="text" class="searchInput" style=" width: 358px;;margin-left: 10px;margin-top: 9px;
          height: 38px;border-radius: 5px; background-color: #acb8f4;border: 1px solid #27273e2e;"
           placeholder="Search products..." onkeyup="filterProducts()">
@@ -60,49 +63,56 @@
       <a class="next" onclick="plusSlides(1)">❯</a>
 
 
+<div>
 
+<section class="promo-banner-section">
+  <div class="promo-card">
+    <img src="images/ad6.png" alt="Gaming Beast Combo">
+    <div class="promo-caption">
+      <h3>🎮 Gaming Beast Combo</h3>
+      <p>Work From Home Kit – ₹3,999</p>
+      <a href="products.html" class="promo-button">Shop Now</a>
+    </div>
+  </div>
 
-    </section>
-    <section class="ad-banner">
-      <div class="image-container">
-        <img class="ad" src="images/ad6.png" alt="Gaming Beast Combo – Work From Home Kit" width="49%" height="auto"
-          border-radius: 3%; />
-        <img class="ad" src="images/ad7.jpg" alt="Gaming Beast Combo – Work From Home Kit" width="49%" height="auto"
-          border-radius: 3%; />
-      </div>
-    </section>
-    <section class="smart-banner-grid">
-      <div class="smart-banner">
-        <img src="https://m.media-amazon.com/images/I/61sRKTAfrhL._UF1000,1000_QL80_.jpg" alt="Wireless Earbuds Pro" />
-        <div class="banner-caption">
-          <h3>🎧 Wireless Earbuds Pro</h3>
-          <p>Buy 1 Get 1 Free – Crystal Clear Sound</p>
-          <a href="products.html" class="button">Shop Now</a>
-        </div>
-      </div>
+  <div class="promo-card">
+    <img src="images/ad7.jpg" alt="Wireless Earbuds Pro">
+    <div class="promo-caption">
+      <h3>🎧 Wireless Earbuds Pro</h3>
+      <p>Buy 1 Get 1 Free – Crystal Clear Sound</p>
+      <a href="products.html" class="promo-button">Shop Now</a>
+    </div>
+  </div>
+  </section>
+<section class="promo-banner-section">
+  <div class="promo-card">
+    <img src="images/ad8.jpg" alt="Smart Watch X1">
+    <div class="promo-caption">
+      <h3>⌚ Smart Watch X1</h3>
+      <p>Now ₹4,999 – Save ₹2,000</p>
+      <a href="products.html" class="promo-button">View Offer</a>
+    </div>
+  </div>
 
-      <div class="smart-banner">
-        <img
-          src="https://rukminim2.flixcart.com/image/292/360/xif0q/smartwatch/c/t/m/44-gen-ex-android-ios-time-up-yes-original-imahbqwn63jmqtgb.jpeg?q=90&crop=false"
-          alt="Smart Watch X1" />
-        <div class="banner-caption">
-          <h3>⌚ Smart Watch X1</h3>
-          <p>Now ₹4,999 – Save ₹2,000</p>
-          <a href="products.html" class="button">View Offer</a>
-        </div>
-      </div>
+  <div class="promo-card">
+    <img src="images/ad9.jpg" alt="Smart Glasses AR">
+    <div class="promo-caption">
+      <h3>🕶️ Smart Glasses AR</h3>
+      <p>20% OFF + Free Case – AR Ready</p>
+      <a href="products.html" class="promo-button">Explore</a>
+    </div>
+  </div>
 
-      <div class="smart-banner">
-        <img src="https://m.media-amazon.com/images/I/71NL9XcuepL._UY1100_.jpg" alt="Smart Glasses AR" />
-        <div class="banner-caption">
-          <h3>🕶️ Smart Glasses AR</h3>
-          <p>20% OFF + Free Case – AR Ready</p>
-          <a href="products.html" class="button">Explore</a>
-        </div>
-
-
-      </div>
-    </section>
+  <div class="promo-card">
+    <img src="images/ad10.jpg" alt="Gaming Monitor Ultra">
+    <div class="promo-caption">
+      <h3>🖥️ Gaming Monitor Ultra</h3>
+      <p>144Hz Refresh Rate – Dominate Every Pixel</p>
+      <a href="products.html" class="promo-button">Explore Gear</a>
+    </div>
+  </div>
+</section>
+</div>
     <div class="ad-container">
       <div class="ad1">
         <img src="images/ad1.png" alt="ad1" />
@@ -121,22 +131,31 @@
       </div>
     </div>
     <section class="testimonials">
-      <h3>💬 What Our Customers Say</h3>
-      <div class="testimonial-grid">
-        <div class="testimonial">
-          <p>"TechNova's Smart Watch changed my life. I track everything now!"</p>
-          <span>– Riya, Pune</span>
-        </div>
-        <div class="testimonial">
-          <p>"The earbuds are crystal clear. And I got two for the price of one!"</p>
-          <span>– Arjun, Delhi</span>
-        </div>
-        <div class="testimonial">
-          <p>"Fast delivery, great packaging, and the gadgets are top-notch."</p>
-          <span>– Meera, Bangalore</span>
+  <h2>What Our Customers Say</h2>
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <p class="quote">“Absolutely stunning design and seamless experience. Our conversions doubled!”</p>
+      <div class="author">
+        <img src="Images/riya.png" alt="User photo">
+        <div>
+          <h4>Priya Sharma</h4>
+          <span>Founder, TechNova</span>
         </div>
       </div>
-    </section>
+    </div>
+    <div class="testimonial-card">
+      <p class="quote">“The UI/UX polish is next-level. Our brand feels premium now.”</p>
+      <div class="author">
+        <img src="Images/ravi.png" alt="User photo">
+        <div>
+          <h4>Ravi Desai</h4>
+          <span>Marketing Head, Snapdeal</span>
+        </div>
+      </div>
+    </div>
+    <!-- Add more cards as needed -->
+  </div>
+</section>
     <!--ljedsnfiaerdsgbvifhcwaeshxmdwjshfjewkhfdjkfhsdahfjksfhasnduewarfey dfcsadghcljaws-->
     <div class="feedbox">
       <div class="row">

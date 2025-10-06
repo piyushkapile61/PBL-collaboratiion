@@ -333,3 +333,36 @@ a.button {
 footer {
   margin-top: 50px;
 }
+/* === Dark Mode Base === */
+body.dark-mode {
+  background-color: #1c1c1c;
+  color: #f5f5f5;
+}
+
+/* Dark Mode for Key Sections */
+body.dark-mode .nav-links,
+body.dark-mode .hero-overlay,
+body.dark-mode .smart-banner,
+body.dark-mode .testimonial-carousel,
+body.dark-mode .newsletter,
+body.dark-mode .footer,
+body.dark-mode .services,
+body.dark-mode .live-ticker {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #f5f5f5;
+}
+
+/* Dark Mode Buttons */
+body.dark-mode .button,
+body.dark-mode .button-glass {
+  background: linear-gradient(to right, #444, #222);
+  color: #fff;
+}
+
+/* Dark Mode Inputs */
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
