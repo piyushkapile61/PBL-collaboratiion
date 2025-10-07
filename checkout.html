@@ -1,54 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <title>Plactic</title>
-  <link rel="icon" href="/favicon.ico" type=Images/icons/logo.png">
+  <link rel="icon" href="/favicon.ico" type="image/png">
   <link rel="stylesheet" href="/Stylesheet/style.css" />
   <link rel="stylesheet" href="/Stylesheet/indexstyle.css" />
   <link rel="stylesheet" href="Stylesheet/nav.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
 
   <style>
-body {
+    body {
       font-family: 'Inter', sans-serif;
       background: linear-gradient(to right, #f8f9fa, #d4af37);
     }
+
     .gold-btn {
       background-color: #d4af37;
       color: white;
       transition: background-color 0.3s, transform 0.2s;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 1rem;
+      border-radius: 4px;
     }
+
     .gold-btn:hover {
       background-color: #c09b2e;
       transform: translateY(-2px);
     }
-    .link-gold {
-      color: #d4af37;
+
+    .hidden {
+      display: none;
     }
-    .link-gold:hover {
-      text-decoration: underline;
-      color: #c09b2e;
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 12px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
     }
-    .hidden { display: none; }
+
+    main {
+      width: 100%;
+      max-width: 600px;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      color: #333;
+    }
+
+    .success-box {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #e6ffe6;
+      border: 2px solid #28a745;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .tick-mark {
+      font-size: 2rem;
+      color: #28a745;
+    }
+
+    h2, h3 {
+      color: black;
+    }
+
+    .items-center {
+      align-items: center;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    ol, ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .space-x-6>:not([hidden])~:not([hidden]) {
+      --tw-space-x-reverse: 0;
+      margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+      margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+    }
+
+    .flex-grow {
+      flex-grow: 1;
+    }
+
+    .nav-links a {
+      color: #333;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: black;
+    }
   </style>
 </head>
-<!--To Do-->
-<!--1 Change allert after adding to cart-->
-<!--2 update Order and contact form-->
-<!--3-->
+
+<body class="min-h-screen flex flex-col items-center justify-start pt-8">
 <header class="w-full bg-white shadow-md px-6 py-3 mb-8">
   <ul class="flex items-center space-x-6 nav-links">
     <img src="Images/icons/logo.png" alt="Snapdeal Logo" style="width: 45px;">
-    <a style="font-size: 20px; font-weight: bold;" class="text-xl font-semibold text-gray-800 href=" #">SNAPDEAL</a>
-    <li class="forward"><a href="home.html" class="text-gray-700 hover:text-yellow-600">HOME</a></li>
-    <li class="forward"><a href="products.html" class="text-gray-700 hover:text-yellow-600">PRODUCTS</a></li>
-    <li class="forward"><a href="cart.html" class="text-gray-700 hover:text-yellow-600">CART</a></li>
-    <li class="forward"><a href="contact.html" class="text-gray-700 hover:text-yellow-600">CONTACT</a></li>
+    <a style="font-size: 20px; font-weight: bold;" class="text-xl font-semibold text-gray-800" href="#">SNAPDEAL</a>
+    <li class="forward"><a href="home.html">HOME</a></li>
+    <li class="forward"><a href="products.html">PRODUCTS</a></li>
+    <li class="forward"><a href="cart.html">CART</a></li>
+    <li class="forward"><a href="contact.html">CONTACT</a></li>
     <li class="flex-grow">
       <input type="text"
         class="w-full max-w-md px-4 py-2 rounded-md bg-blue-100 border border-gray-300 placeholder-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-        style=" border-radius: 11px; height: 44px; border: 0.5px solid #b6a6a6; background: #fffbda3d; padding-left: 18px;"
+        style="border-radius: 11px; height: 44px; border: 0.5px solid #b6a6a6; background: #fffbda3d; padding-left: 18px;"
         placeholder="Search products..." onkeyup="filterProducts()">
     </li>
 
@@ -56,74 +137,73 @@ body {
       <img src="Images/icons/proffilee/abcd.png" alt="Profile" class="w-8 h-8 rounded-full hover:scale-105 transition"
         style="width: 100%; height: 50px; background: #8c8c8c42; border-radius: 50%;">
     </a>
-
   </ul>
 </header>
 
-<body class="min-h-screen flex flex-col items-center justify-start pt-8">
-  <main>
-    <h2>Confirm Your Order</h2>
-    <div id="orderSummary"></div>
+<main>
+  <img src="Images/icons/logo.png" alt="TechNova Logo" class="mx-auto w-10 h-10 mb-2" style="width: 97px; margin-left: 250px;">
+  <h2 class="text-xl font-bold mb-4">Confirm Your Order</h2>
+  <div id="orderSummary" class="mb-6"></div>
 
-    <h3>Shipping Address</h3>
-    <form id="checkoutForm">
-      <input type="text" placeholder="Full Name" required /><br />
-      <input type="text" placeholder="Address Line 1" required /><br />
-      <input type="text" placeholder="City" required /><br />
-      <input type="text" placeholder="Postal Code" required /><br />
-      <input type="text" placeholder="Phone Number" required /><br />
+  <h3 class="text-lg font-semibold mb-2">Shipping Address</h3>
+  <form id="checkoutForm">
+    <input type="text" placeholder="Full Name" required />
+    <input type="text" placeholder="Address Line 1" required />
+    <input type="text" placeholder="City" required />
+    <input type="text" placeholder="Postal Code" required />
+    <input type="text" placeholder="Phone Number" required />
 
-      <h3>Payment Method</h3>
-      <select required>
-        <option value="">Select</option>
-        <option>UPI</option>
-        <option>Credit/Debit Card</option>
-        <option>Net Banking</option>
-        <option>Cash on Delivery</option>
-      </select><br /><br />
+    <h3 class="text-lg font-semibold mt-4 mb-2">Payment Method</h3>
+    <select required>
+      <option value="">Select</option>
+      <option>UPI</option>
+      <option>Credit/Debit Card</option>
+      <option>Net Banking</option>
+      <option>Cash on Delivery</option>
+    </select><br><br>
 
-      <button type="submit">Place Order</button>
-    </form>
-    <div id="successAnimation" class="success-box">
-      <div class="tick-mark">&#10004;</div>
-      <h3>Order Placed Successfully!</h3>
-    </div>
-  </main>
-  <div id="orderSummary"></div>
+    <button type="submit" class="gold-btn mt-4">Place Order</button>
+  </form>
 
-  <footer>
-    <p>© 2025 Snapdeal. Smart Gadgets Redefined.</p>
-  </footer>
+  <div id="successAnimation" class="success-box hidden">
+    <div class="tick-mark">&#10004;</div>
+    <h3>Order Placed Successfully!</h3>
+  </div>
+</main>
 
-  <script>
-    const items = JSON.parse(localStorage.getItem("checkoutItems")) || [];
-    const summary = document.getElementById("orderSummary");
+<footer>
+  <p>© 2025 Snapdeal. Smart Gadgets Redefined.</p>
+</footer>
 
-    if (items.length == 0) {
-      // summary.innerHTML = "<p>No items selected.</p>";
-    } else {
-      let total = 0;
-      items.forEach(item => {
-        const div = document.createElement("div");
-        div.className = "checkout-item";
-        div.innerHTML = `
+<script>
+  const items = JSON.parse(localStorage.getItem("checkoutItems")) || [];
+  const summary = document.getElementById("orderSummary");
+
+  if (items.length > 0) {
+    let total = 0;
+    items.forEach(item => {
+      const div = document.createElement("div");
+      div.className = "checkout-item";
+      div.innerHTML = `
         <img src="${item.image}" alt="${item.name}" style="width:100px; border-radius:8px;" />
         <p><strong>${item.name}</strong><br>₹${item.price}</p>
       `;
-        summary.appendChild(div);
-        total += item.price;
-      });
-      const totalDiv = document.createElement("h3");
-      totalDiv.textContent = `Total: ₹${total}`;
-      summary.appendChild(totalDiv);
-    }
-
-    document.getElementById("checkoutForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-      localStorage.removeItem("checkoutItems");
-      window.location.href = "order-success.html";
+      summary.appendChild(div);
+      total += item.price;
     });
-  </script>
-</body>
+    const totalDiv = document.createElement("h3");
+    totalDiv.textContent = `Total: ₹${total}`;
+    summary.appendChild(totalDiv);
+  }
 
+  document.getElementById("checkoutForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    localStorage.removeItem("checkoutItems");
+    document.getElementById("successAnimation").classList.remove("hidden");
+    setTimeout(() => {
+      window.location.href = "order-success.html";
+    }, 2000);
+  });
+</script>
+</body>
 </html>
