@@ -358,7 +358,7 @@ body.dark-mode .newsletter,
 body.dark-mode .footer,
 body.dark-mode .services,
 body.dark-mode .live-ticker {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgb(225, 0, 0);
   color: #f5f5f5;
 }
 

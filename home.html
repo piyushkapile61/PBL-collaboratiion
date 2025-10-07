@@ -51,12 +51,13 @@
     <li class="flex-grow">
       <input type="text"
         class="w-full max-w-md px-4 py-2 rounded-md bg-blue-100 border border-gray-300 placeholder-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-        style=" border-radius: 11px; height: 44px; border: 0.5px solid #b6a6a6; background: #fffbda3d; padding-left: 18px;" placeholder="Search products..." onkeyup="filterProducts()">
+        style=" border-radius: 11px; height: 44px; border: 0.5px solid #b6a6a6; background: #fffbda3d; padding-left: 18px;"
+        placeholder="Search products..." onkeyup="filterProducts()">
     </li>
 
     <a href="login.html" title="Login / Profile">
-      <img src="Images/icons/proffilee/abcd.png" alt="Profile"
-        class="w-8 h-8 rounded-full hover:scale-105 transition" style="width: 100%; height: 50px; background: #8c8c8c42; border-radius: 50%;">
+      <img src="Images/icons/proffilee/abcd.png" alt="Profile" class="w-8 h-8 rounded-full hover:scale-105 transition"
+        style="width: 100%; height: 50px; background: #8c8c8c42; border-radius: 50%;">
     </a>
 
   </ul>
@@ -163,30 +164,33 @@
           <img id="slide-img" src="images/ad2.png" alt="Ad Image" />
         </div>
       </section>
-      <section class="testimonials">
-        <h2>What Our Customers Say</h2>
-        <div class="testimonial-grid">
-          <div class="testimonial-card">
-            <p class="quote">“Absolutely stunning design and seamless experience. Our conversions doubled!”</p>
-            <div class="author">
-              <img src="Images/riya.png" alt="User photo">
-              <div>
-                <h4>Priya Sharma</h4>
-                <span>Founder, TechNova</span>
+      <section>
+
+        <div class="testimonials">
+          <h2>What Our Customers Say</h2>
+          <div class="testimonial-grid">
+            <div class="testimonial-card">
+              <p class="quote">“Absolutely stunning design and seamless experience. Our conversions doubled!”</p>
+              <div class="author">
+                <img src="Images/riya.png" alt="User photo">
+                <div>
+                  <h4>Priya Sharma</h4>
+                  <span>Founder, TechNova</span>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="testimonial-card">
-            <p class="quote">“The UI/UX polish is next-level. Our brand feels premium now.”</p>
-            <div class="author">
-              <img src="Images/ravi.png" alt="User photo">
-              <div>
-                <h4>Ravi Desai</h4>
-                <span>Marketing Head, Snapdeal</span>
+            <div class="testimonial-card">
+              <p class="quote">“The UI/UX polish is next-level. Our brand feels premium now.”</p>
+              <div class="author">
+                <img src="Images/ravi.png" alt="User photo">
+                <div>
+                  <h4>Ravi Desai</h4>
+                  <span>Marketing Head, Snapdeal</span>
+                </div>
               </div>
             </div>
+            <!-- Add more cards as needed -->
           </div>
-          <!-- Add more cards as needed -->
         </div>
       </section>
 
@@ -213,24 +217,26 @@
           <li>📞 Tech Support via WhatsApp</li>
           <li>📱 Mobile App for Order Tracking</li>
         </ul>
+        <section class="app-promo">
+          <h3>📱 Get the TechNova App</h3>
+          <p>Shop faster, track orders, and get exclusive app-only deals.</p>
+          <a href="PDF/SNAPDEAL.pdf" class="button">Download Now</a>
+        </section>
+        <section class="newsletter">
+          <h3>📬 Stay Updated</h3>
+          <p>Subscribe to our newsletter for weekly deals and tech tips.</p>
+          <form onsubmit="event.preventDefault(); alert('✅ Subscribed!');">
+            <input type="email" placeholder="Enter your email" required />
+            <button type="submit">Subscribe</button>
+          </form>
+        </section>
       </section>
 
       <!-- 📱 App Promo Section -->
-      <section class="app-promo">
-        <h3>📱 Get the TechNova App</h3>
-        <p>Shop faster, track orders, and get exclusive app-only deals.</p>
-        <a href="PDF/SNAPDEAL.pdf" class="button">Download Now</a>
-      </section>
+
 
       <!-- 📬 Newsletter Section -->
-      <section class="newsletter">
-        <h3>📬 Stay Updated</h3>
-        <p>Subscribe to our newsletter for weekly deals and tech tips.</p>
-        <form onsubmit="event.preventDefault(); alert('✅ Subscribed!');">
-          <input type="email" placeholder="Enter your email" required />
-          <button type="submit">Subscribe</button>
-        </form>
-      </section>
+
 
   </main>
   </main>
