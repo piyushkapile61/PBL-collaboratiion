@@ -7,18 +7,64 @@
   <link rel="icon" href="/favicon.ico" type=Images/icons/logo.png">
   <link rel="stylesheet" href="/Stylesheet/style.css" />
   <link rel="stylesheet" href="/Stylesheet/indexstyle.css" />
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-  <script src="javascript/script.js"></script>
-  <script src="javascript/spinwheel.js"></script>
-  <script src="javascript/darkmode.js"></script>
+  <link rel="stylesheet" href="Stylesheet/nav.css">
+
+  <style>
+    .items-center {
+      align-items: center;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    ol,
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .space-x-6>:not([hidden])~:not([hidden]) {
+      --tw-space-x-reverse: 0;
+      margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+      margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+    }
+
+    .flex-grow {
+      flex-grow: 1;
+    }
+  </style>
 </head>
 <!--To Do-->
 <!--1 Change allert after adding to cart-->
 <!--2 update Order and contact form-->
 <!--3-->
+<header class="w-full bg-white shadow-md px-6 py-3 mb-8">
+  <ul class="flex items-center space-x-6 nav-links">
+    <img src="Images/icons/logo.png" alt="Snapdeal Logo" style="width: 45px;">
+    <a style="font-size: 20px; font-weight: bold;" class="text-xl font-semibold text-gray-800 href=" #">SNAPDEAL</a>
+    <li class="forward"><a href="home.html" class="text-gray-700 hover:text-yellow-600">HOME</a></li>
+    <li class="forward"><a href="products.html" class="text-gray-700 hover:text-yellow-600">PRODUCTS</a></li>
+    <li class="forward"><a href="cart.html" class="text-gray-700 hover:text-yellow-600">CART</a></li>
+    <li class="forward"><a href="contact.html" class="text-gray-700 hover:text-yellow-600">CONTACT</a></li>
+    <li class="flex-grow">
+      <input type="text"
+        class="w-full max-w-md px-4 py-2 rounded-md bg-blue-100 border border-gray-300 placeholder-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+        style=" border-radius: 11px; height: 44px; border: 0.5px solid #b6a6a6; background: #fffbda3d; padding-left: 18px;" placeholder="Search products..." onkeyup="filterProducts()">
+    </li>
 
-<body>
-  <header>
+    <a href="login.html" title="Login / Profile">
+      <img src="Images/icons/proffilee/abcd.png" alt="Profile"
+        class="w-8 h-8 rounded-full hover:scale-105 transition" style="width: 100%; height: 50px; background: #8c8c8c42; border-radius: 50%;">
+    </a>
+
+  </ul>
+</header>
+
+<body class="min-h-screen flex flex-col items-center justify-start pt-8">
+
+  <!-- <header>
     <div>
       <ul class="nav-links">
         <li class="forward" style="box-shadow: none; border: none; background: none;">&nbsp;&nbsp;&nbsp;<img
@@ -39,9 +85,10 @@
         <a href="login.html" title="Login / Profile">
           <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile" style="width:15%;">
         </a>
+
       </ul>
     </div>
-  </header>
+  </header> -->
 
   <main class="content-overlay">
     <section class="slideshow-container">
@@ -78,7 +125,8 @@
           </div>
 
           <div class="promo-card">
-            <img src="https://www.shutterstock.com/image-vector/kyiv-ukraine-september-30-2024-600nw-2524016933.jpg" alt="Wireless Earbuds Pro">
+            <img src="https://www.shutterstock.com/image-vector/kyiv-ukraine-september-30-2024-600nw-2524016933.jpg"
+              alt="Wireless Earbuds Pro">
             <div class="promo-caption">
               <h3>🎧 Wireless Earbuds Pro</h3>
               <p>Buy 1 Get 1 Free – Crystal Clear Sound</p>
@@ -87,7 +135,9 @@
           </div>
 
           <div class="promo-card">
-            <img src="https://rukminim2.flixcart.com/image/292/360/xif0q/smartwatch/c/t/m/44-gen-ex-android-ios-time-up-yes-original-imahbqwn63jmqtgb.jpeg?q=90&crop=false" alt="Smart Watch X1">
+            <img
+              src="https://rukminim2.flixcart.com/image/292/360/xif0q/smartwatch/c/t/m/44-gen-ex-android-ios-time-up-yes-original-imahbqwn63jmqtgb.jpeg?q=90&crop=false"
+              alt="Smart Watch X1">
             <div class="promo-caption">
               <h3>⌚ Smart Watch X1</h3>
               <p>Now ₹4,999 – Save ₹2,000</p>
@@ -106,13 +156,13 @@
         </section>
       </div>
       <section class="slideshow-section">
-   <div class="slideshow" style="justify-content: center;">
-  <img id="slide-img" src="images/ad2.png" alt="Ad Image" />
-</div>
-<div class="slideshow" style="justify-content: center;">
-  <img id="slide-img" src="images/ad2.png" alt="Ad Image" />
-</div>
-</section>
+        <div class="slideshow" style="justify-content: center;">
+          <img id="slide-img" src="images/ad2.png" alt="Ad Image" />
+        </div>
+        <div class="slideshow" style="justify-content: center;">
+          <img id="slide-img" src="images/ad2.png" alt="Ad Image" />
+        </div>
+      </section>
       <section class="testimonials">
         <h2>What Our Customers Say</h2>
         <div class="testimonial-grid">
@@ -140,47 +190,47 @@
         </div>
       </section>
 
-  <!-- 📬 Subscription Box -->
-  <div class="feedbox">
-    <div class="subscribe_form">
-      <div class="heading_container heading_center">
-        <h3>Subscribe To Get Discount Offers</h3>
+      <!-- 📬 Subscription Box -->
+      <div class="feedbox">
+        <div class="subscribe_form">
+          <div class="heading_container heading_center">
+            <h3>Subscribe To Get Discount Offers</h3>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+          <form action="">
+            <input type="email" placeholder="Enter your email" />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
       </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-      <form action="">
-        <input type="email" placeholder="Enter your email" />
-        <button type="submit">Subscribe</button>
-      </form>
-    </div>
-  </div>
 
-  <!-- 🛠️ Services Section -->
-  <section class="services">
-    <h3>🛠️ Our Services</h3>
-    <ul>
-      <li>📦 Free 2-Day Delivery</li>
-      <li>🔄 Easy 7-Day Returns</li>
-      <li>📞 Tech Support via WhatsApp</li>
-      <li>📱 Mobile App for Order Tracking</li>
-    </ul>
-  </section>
+      <!-- 🛠️ Services Section -->
+      <section class="services">
+        <h3>🛠️ Our Services</h3>
+        <ul>
+          <li>📦 Free 2-Day Delivery</li>
+          <li>🔄 Easy 7-Day Returns</li>
+          <li>📞 Tech Support via WhatsApp</li>
+          <li>📱 Mobile App for Order Tracking</li>
+        </ul>
+      </section>
 
-  <!-- 📱 App Promo Section -->
-  <section class="app-promo">
-    <h3>📱 Get the TechNova App</h3>
-    <p>Shop faster, track orders, and get exclusive app-only deals.</p>
-    <a href="PDF/SNAPDEAL.pdf" class="button">Download Now</a>
-  </section>
+      <!-- 📱 App Promo Section -->
+      <section class="app-promo">
+        <h3>📱 Get the TechNova App</h3>
+        <p>Shop faster, track orders, and get exclusive app-only deals.</p>
+        <a href="PDF/SNAPDEAL.pdf" class="button">Download Now</a>
+      </section>
 
-  <!-- 📬 Newsletter Section -->
-  <section class="newsletter">
-    <h3>📬 Stay Updated</h3>
-    <p>Subscribe to our newsletter for weekly deals and tech tips.</p>
-    <form onsubmit="event.preventDefault(); alert('✅ Subscribed!');">
-      <input type="email" placeholder="Enter your email" required />
-      <button type="submit">Subscribe</button>
-    </form>
-  </section>
+      <!-- 📬 Newsletter Section -->
+      <section class="newsletter">
+        <h3>📬 Stay Updated</h3>
+        <p>Subscribe to our newsletter for weekly deals and tech tips.</p>
+        <form onsubmit="event.preventDefault(); alert('✅ Subscribed!');">
+          <input type="email" placeholder="Enter your email" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </section>
 
   </main>
   </main>
@@ -208,19 +258,19 @@
     }
   </script>
   <script>const images = [
-  "images/ad2.png",
-  "images/ad3.png",
-  "images/ad4.png",
-  "images/ad5.png"
-];
+      "images/ad2.png",
+      "images/ad3.png",
+      "images/ad4.png",
+      "images/ad5.png"
+    ];
 
-let current = 0;
-const imgElement = document.getElementById("slide-img");
+    let current = 0;
+    const imgElement = document.getElementById("slide-img");
 
-setInterval(() => {
-  current = (current + 1) % images.length;
-  imgElement.src = images[current];
-}, 3000);</Script>
+    setInterval(() => {
+      current = (current + 1) % images.length;
+      imgElement.src = images[current];
+    }, 3000);</Script>
   <div class="spinwheel-widget">
     <img src="/Images/icons/spinwheel.png" alt="Spin & Win Wheel" id="spinWheelImage" />
     <div class="pointer">
@@ -234,6 +284,10 @@ setInterval(() => {
   <audio id="spinSound" src="SPM.mp3"></audio>
 
   <!-- 🎉 Confetti Script -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="javascript/script.js"></script>
+  <script src="javascript/spinwheel.js"></script>
+  <script src="javascript/darkmode.js"></script>
 </body>
 
 </html>

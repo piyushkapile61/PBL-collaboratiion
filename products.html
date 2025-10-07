@@ -16,40 +16,70 @@
       text-align: center;
     }
   </style> -->
+
 <head>
   <meta charset="UTF-8" />
   <title>Plactic</title>
+  <link rel="icon" href="/favicon.ico" type=Images/icons/logo.png">
   <link rel="stylesheet" href="/Stylesheet/style.css" />
   <link rel="stylesheet" href="/Stylesheet/indexstyle.css" />
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-  <script src="javascript/script.js"></script>
-  <script src="javascript/spinwheel.js"></script>
+  <link rel="stylesheet" href="Stylesheet/nav.css">
+
+  <style>
+    .items-center {
+      align-items: center;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    ol,
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .space-x-6>:not([hidden])~:not([hidden]) {
+      --tw-space-x-reverse: 0;
+      margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+      margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+    }
+
+    .flex-grow {
+      flex-grow: 1;
+    }
+  </style>
 </head>
+<!--To Do-->
+<!--1 Change allert after adding to cart-->
+<!--2 update Order and contact form-->
+<!--3-->
+<header class="w-full bg-white shadow-md px-6 py-3 mb-8">
+  <ul class="flex items-center space-x-6 nav-links">
+    <img src="Images/icons/logo.png" alt="Snapdeal Logo" style="width: 45px;">
+    <a style="font-size: 20px; font-weight: bold;" class="text-xl font-semibold text-gray-800 href=" #">SNAPDEAL</a>
+    <li class="forward"><a href="home.html" class="text-gray-700 hover:text-yellow-600">HOME</a></li>
+    <li class="forward"><a href="products.html" class="text-gray-700 hover:text-yellow-600">PRODUCTS</a></li>
+    <li class="forward"><a href="cart.html" class="text-gray-700 hover:text-yellow-600">CART</a></li>
+    <li class="forward"><a href="contact.html" class="text-gray-700 hover:text-yellow-600">CONTACT</a></li>
+    <li class="flex-grow">
+      <input type="text"
+        class="w-full max-w-md px-4 py-2 rounded-md bg-blue-100 border border-gray-300 placeholder-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+        style=" border-radius: 11px; height: 44px; border: 0.5px solid #b6a6a6; background: #fffbda3d; padding-left: 18px;"
+        placeholder="Search products..." onkeyup="filterProducts()">
+    </li>
 
-<body>
-  <header>
-    <div >
-      <ul class="nav-links" >
-        <li class="forward" style="box-shadow: none; border: none; background: none;">&nbsp;&nbsp;&nbsp;<img src="Images/icons/logo.png"
-            style="width: 45px;">
-        </li>
-        <li class="forward"><a href="null">SNAPDEAL</a></li>
-        <li class="forward" ><a href="home.html">HOME </a></li>
-        <li class="forward" ><a href="products.html">PRODUCTS</a>
-        </li>
-        <li class="forward" ><a href="cart.html">CART</a></li>
-        <li class="forward" ><a href="contact.html">CONTACT</a></li>
-        <input type="text" class="searchInput" style=" width: 358px;;margin-left: 10px;margin-top: 9px;
-         height: 38px;border-radius: 5px; background-color: #acb8f4;border: 1px solid #27273e2e;"
-          placeholder="Search products..." onkeyup="filterProducts()">
-          <li?><a href="login.html" title="Login / Profile">
-          <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile" width="10%" >
-        </a></li>
-      </ul>
-    </div>
-  </header>
+    <a href="login.html" title="Login / Profile">
+      <img src="Images/icons/proffilee/abcd.png" alt="Profile" class="w-8 h-8 rounded-full hover:scale-105 transition"
+        style="width: 100%; height: 50px; background: #8c8c8c42; border-radius: 50%;">
+    </a>
 
+  </ul>
+</header>
 
+<body class="min-h-screen flex flex-col items-center justify-start pt-8">
   <main>
     <h2>Explore Our Smart Gadgets</h2>
     <div class="product-grid" id="productGrid">
@@ -123,7 +153,8 @@
         <div class="offer">🎁 Offer: ₹1500 cashback on student orders</div>
       </div>
       <div class="card" data-name="Smart Watch X1">
-        <img src="https://m.media-amazon.com/images/I/61yggJpMNTL._UF1000,1000_QL80_.jpg" alt="boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones" />
+        <img src="https://m.media-amazon.com/images/I/61yggJpMNTL._UF1000,1000_QL80_.jpg"
+          alt="boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones" />
         <h3>boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones</h3>
         <p>₹1,599 – Bluetooth + AUX modes, 20-hour playback</p>
         <button
@@ -139,7 +170,8 @@
         <div class="offer">🎁 Offer: Buy 1, get 10% off second</div>
       </div>
       <div class="card" data-name="Smart Watch X1">
-        <img src="https://m.media-amazon.com/images/I/A18eQcdaQZL.jpg" alt="Marshall Woburn 4090963 200 Watt Wireless Bluetooth Satellite Speaker (Black)" />
+        <img src="https://m.media-amazon.com/images/I/A18eQcdaQZL.jpg"
+          alt="Marshall Woburn 4090963 200 Watt Wireless Bluetooth Satellite Speaker (Black)" />
         <h3>Marshall Woburn 4090963 200 Watt Wireless Bluetooth Satellite Speaker (Black)</h3>
         <p>₹54,999 – 200W stereo output, 200W stereo output</p>
         <button
@@ -193,7 +225,7 @@
           src="https://rukminim2.flixcart.com/image/704/844/xif0q/gamingconsole/d/t/z/visual-2000-gb-internal-storage-ultra-fast-ssd-sony-ps5-pro-2-tb-original-imahbfgcppjhexme.jpeg?q=90&crop=false"
           alt="Playstation Sony PS5 Pro 2 TB SSD Console" />
         <h3>Playstation Sony PS5 Pro 2 TB SSD Console</h3>
-        <p>₹85,990 –  4K ray-traced graphics, DualSense haptic controller</p>
+        <p>₹85,990 – 4K ray-traced graphics, DualSense haptic controller</p>
         <button
           onclick="buyNow('Playstation Sony PS5 Pro 2 TB SSD Console', 85990, 'https://rukminim2.flixcart.com/image/704/844/xif0q/gamingconsole/d/t/z/visual-2000-gb-internal-storage-ultra-fast-ssd-sony-ps5-pro-2-tb-original-imahbfgcppjhexme.jpeg?q=90&crop=false')">⚡
           Buy Now</button>
