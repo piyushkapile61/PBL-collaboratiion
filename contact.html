@@ -1,16 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <title>Plactic</title>
-  <link rel="icon" href="/favicon.ico" type=Images/icons/logo.png">
-  <link rel="stylesheet" href="/Stylesheet/style.css" />
-  <link rel="stylesheet" href="/Stylesheet/indexstyle.css" />
-  <link rel="stylesheet" href="Stylesheet/nav.css">
-
+  <title>TechNova – Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    .items-center {
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #f8f9fa, #d4af37);
+    }
+    .gold-btn {
+      background-color: #d4af37;
+      color: white;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .gold-btn:hover {
+      background-color: #c09b2e;
+      transform: translateY(-2px);
+    }
+    .link-gold {
+      color: #d4af37;
+    }
+    .link-gold:hover {
+      text-decoration: underline;
+      color: #c09b2e;
+    }
+    .hidden { display: none; }
+        .items-center {
       align-items: center;
     }
 
@@ -36,10 +54,9 @@
     }
   </style>
 </head>
-<!--To Do-->
-<!--1 Change allert after adding to cart-->
-<!--2 update Order and contact form-->
-<!--3-->
+<body class="min-h-screen flex flex-col items-center justify-start pt-8">
+
+  <!-- Header -->
 <header class="w-full bg-white shadow-md px-6 py-3 mb-8">
   <ul class="flex items-center space-x-6 nav-links">
     <img src="Images/icons/logo.png" alt="Snapdeal Logo" style="width: 45px;">
@@ -63,21 +80,104 @@
   </ul>
 </header>
 
-<body class="min-h-screen flex flex-col items-center justify-start pt-8">
-  <main>
-    <h2>Contact Us</h2>
-    <p>Need help or want to share feedback? Reach out below.</p>
-    <form onsubmit="submitContact(event)">
-      <input type="text" placeholder="Your Name" required /><br>
-      <input type="email" placeholder="Your Email" required /><br>
-      <textarea placeholder="Your Message" rows="5" required></textarea><br>
-      <button type="submit">Send Message</button>
+  <!-- Login Card -->
+  <div class="bg-white shadow-xl rounded-lg p-8 w-full max-w-md">
+    <div class="text-center mb-6">
+      <img src="Images/icons/logo.png" alt="TechNova Logo" class="mx-auto w-10 h-10 mb-2">
+      <h2 class="text-2xl font-semibold text-gray-800">CONTACT US</h2>
+      <p class="text-sm text-gray-500">Need help or want to share feedback? Reach out below.</p>
+    </div>
+
+    <!-- Login Form -->
+    <form id="loginForm">
+      <div class="mb-4">
+        <label for="Name" class="block text-gray-700 font-medium mb-1">Your Name</label>
+        <input type="text" id="Name" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400" required />
+      </div>
+      <div class="mb-4">
+        <label for="email" class="block text-gray-700 font-medium mb-1">Email</label>
+        <input type="email" id="email" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400" required />
+      </div>
+      <div class="mb-4">
+        <label for="opinion" class="block text-gray-700 font-medium mb-1">Your Opinion</label>
+<textarea 
+  id="opinion" 
+  class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400" 
+  rows="5" 
+  placeholder="Share your thoughts..." 
+  required>
+</textarea><br>
+<label for="experience" class="block text-gray-700 font-medium mb-2">How was your experience?</label>
+<select id="experience" name="experience" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400" required>
+  <option value="" disabled selected>Select an option</option>
+  <option value="excellent">Excellent</option>
+  <option value="good">Good</option>
+  <option value="average">Average</option>
+  <option value="poor">Poor</option>
+</select><br><br>
+      <button type="submit" class="w-full py-2 rounded-md gold-btn">Send Message</button>
     </form>
-  </main>
+  </div>
 
-  <footer>
-    <p>© 2025 Snapdeal. Smart Gadgets Redefined.</p>
-  </footer>
+  <!-- Inline Script -->
+  <script>
+    function showForm(formId) {
+      document.getElementById("loginForm").classList.add("hidden");
+      document.getElementById("signupForm").classList.add("hidden");
+      document.getElementById("forgotForm").classList.add("hidden");
+      document.getElementById(formId).classList.remove("hidden");
+    }
+
+    // Login
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const user = JSON.parse(localStorage.getItem("user"));
+
+      if (user && user.email === email && user.password === password) {
+        alert("✅ Login successful!");
+        window.location.href = "home.html";
+      } else {
+        alert("❌ Invalid credentials.");
+      }
+    });
+
+    // Signup
+document.getElementById("signupForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const fullName = document.getElementById("fullName").value;
+  const email = document.getElementById("signupEmail").value;
+  const phone = document.getElementById("phone").value;
+  const gender = document.getElementById("gender").value;
+  const dob = document.getElementById("dob").value;
+  const password = document.getElementById("signupPassword").value;
+  const confirm = document.getElementById("confirmPassword").value;
+
+  if (password !== confirm) {
+    alert("❌ Passwords do not match.");
+    return;
+  }
+
+  const user = { fullName, email, phone, gender, dob, password };
+  localStorage.setItem("user", JSON.stringify(user));
+  alert("✅ Account created successfully!");
+  showForm("loginForm");
+});
+    // Forgot Password
+    document.getElementById("forgotForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const email = document.getElementById("forgotEmail").value;
+      const user = JSON.parse(localStorage.getItem("user"));
+
+      if (user && user.email === email) {
+        alert("📩 Reset link sent to your email (simulated).");
+        showForm("loginForm");
+      } else {
+        alert("❌ Email not found.");
+      }
+    });
+  </script>
 </body>
-
 </html>

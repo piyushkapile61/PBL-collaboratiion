@@ -10,30 +10,27 @@
   <link rel="stylesheet" href="Stylesheet/nav.css">
 
   <style>
-    .items-center {
-      align-items: center;
+body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #f8f9fa, #d4af37);
     }
-
-    .flex {
-      display: flex;
+    .gold-btn {
+      background-color: #d4af37;
+      color: white;
+      transition: background-color 0.3s, transform 0.2s;
     }
-
-    ol,
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
+    .gold-btn:hover {
+      background-color: #c09b2e;
+      transform: translateY(-2px);
     }
-
-    .space-x-6>:not([hidden])~:not([hidden]) {
-      --tw-space-x-reverse: 0;
-      margin-right: calc(1.5rem * var(--tw-space-x-reverse));
-      margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+    .link-gold {
+      color: #d4af37;
     }
-
-    .flex-grow {
-      flex-grow: 1;
+    .link-gold:hover {
+      text-decoration: underline;
+      color: #c09b2e;
     }
+    .hidden { display: none; }
   </style>
 </head>
 <!--To Do-->
